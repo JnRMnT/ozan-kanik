@@ -2,6 +2,7 @@ import * as $ from 'jquery';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { HttpService } from './http.service';
@@ -27,7 +28,8 @@ import { SummaryBioComponent } from './summary-bio/summary-bio.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [HttpService,PreferencesService],
   bootstrap: [AppComponent]

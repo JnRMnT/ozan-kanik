@@ -11,6 +11,10 @@
         }
       } 
     }
+
+    .panel{
+        padding: 5px;
+    }
   }
 }
 
@@ -59,16 +63,16 @@
   }
 }
 
-.profile-pic{
-  img{
+.profile-pic  {
+  img {
     margin: auto;
     max-width: 11vw;
   }
 
-  .social-link{
+  .social-link  {
     padding-left: 0;
 
-    li{
+    li  {
       text-align: center;
       width: 22%;
       display: inline-block;
@@ -79,9 +83,15 @@
 
   /* Lower Res */
   @media (max-width : 992px) {
-    .profile-pic{
-      img{
+    .profile-pic  {
+      img {
         max-width: 18vw;
+      }
+
+      &+div {
+        h2,h4 {
+          text-align: center;
+        }
       }
 
       .social-link{
