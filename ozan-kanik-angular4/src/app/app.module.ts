@@ -14,6 +14,7 @@ import { EducationComponent } from './education/education.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
 import { SummaryBioComponent } from './summary-bio/summary-bio.component';
+import { DateIntervalPipe } from './work-experience/date-interval.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SummaryBioComponent } from './summary-bio/summary-bio.component';
     EducationComponent,
     ProjectsComponent,
     SkillsComponent,
-    SummaryBioComponent
+    SummaryBioComponent,
+    DateIntervalPipe
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,9 @@ import { SummaryBioComponent } from './summary-bio/summary-bio.component';
     CommonModule
   ],
   providers: [HttpService,PreferencesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    HeaderComponent
+  ]
 })
 export class AppModule { }

@@ -1,3 +1,16 @@
-<div class="well container">
-
+<div class="well container timeline-container">
+    <div class="timeline">
+        <div class="container" *ngFor="let workExperience of workExperiences;let isOdd = odd;let isEven = even;" [ngClass]="{'left':isEven,'right':isOdd}">
+            <div class="content">
+                <div>
+                    <div class="pull-right" *ngIf="workExperience.thumbnailUrl">
+                        <img class="img-thumbnail img-responsive" [src]="workExperience.thumbnailUrl" />
+                    </div>
+                    <h2>{{workExperience.company}}</h2>
+                    <h4>{{workExperience | dateInterval}}</h4>
+                </div>
+                <p>{{workExperience.description}}</p>
+            </div>
+        </div>
+    </div>
 </div>

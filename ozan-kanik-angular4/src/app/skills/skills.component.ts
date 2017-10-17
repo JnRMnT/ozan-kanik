@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Skill } from './skill';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-skills',
