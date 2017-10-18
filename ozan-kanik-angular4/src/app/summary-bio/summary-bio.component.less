@@ -1,0 +1,51 @@
+.profile  {
+    table {
+      tr  {
+        td:first-child{
+          font-weight: bold;
+        }
+        td  {
+          border-top: 0 !important;
+        }
+      }
+    }
+  }
+  
+  .profile-pic  {
+    img {
+      margin: auto;
+      max-width: 11vw;
+    }
+  
+    .social-link  {
+      padding-left: 0;
+  
+      li  {
+        text-align: center;
+        width: 15%;
+        display: inline-block;
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  /* Lower Res */
+@media (max-width : 992px) {
+    .profile-pic  {
+      img {
+        max-width: 18vw;
+      }
+  
+      &+div {
+        h2,h4 {
+          text-align: center;
+        }
+      }
+  
+      .social-link{
+        li{
+          width: 6%;
+        }
+      }
+    }
+  }

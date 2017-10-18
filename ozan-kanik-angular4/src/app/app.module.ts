@@ -1,4 +1,5 @@
 import * as $ from 'jquery';
+import { LoadingModule } from 'ngx-loading';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
@@ -7,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HttpService } from './http.service';
 import { PreferencesService } from './preferences.service';
+import { LoadingService } from './loading.service';
 import { HeaderComponent } from './header/header.component';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
 import { ContactComponent } from './contact/contact.component';
@@ -31,9 +33,10 @@ import { DateIntervalPipe } from './work-experience/date-interval.pipe';
   imports: [
     BrowserModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    LoadingModule
   ],
-  providers: [HttpService,PreferencesService],
+  providers: [HttpService,PreferencesService, LoadingService],
   bootstrap: [AppComponent],
   schemas: [
     HeaderComponent

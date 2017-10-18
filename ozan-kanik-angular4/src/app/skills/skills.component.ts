@@ -24,7 +24,7 @@ export class SkillsComponent implements OnInit {
   }
 
   ngAfterViewInit(){
-    (<any>$("span[title]")).tooltip();
+    (<any>$("span[title],a[title]")).tooltip();
   }
 
   private groupCategories() {
