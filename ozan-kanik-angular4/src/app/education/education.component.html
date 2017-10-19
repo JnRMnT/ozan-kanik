@@ -1,3 +1,15 @@
-<div class="well container">
-
+<div class="container">
+    <div class="row">
+        <div *ngFor="let education of educationInfo;" class="col-xs-12 col-sm-4">
+            <div class="well text-center">
+                <div *ngIf="education.thumbnailUrl">
+                    <img class="img-thumbnail img-responsive" [src]="education.thumbnailUrl" width="75" />
+                </div>
+                <h4>{{education.schoolName}}</h4>
+                <i class="fa fa-calendar"></i>&nbsp;<span>({{education | dateInterval}})</span>
+                <p>{{education.description}}</p>
+                <p *ngIf="education.gpa"><b>GPA:</b> {{education.gpa}}/{{education.gpaOutOf}}</p>
+            </div>
+        </div>
+    </div>
 </div>
