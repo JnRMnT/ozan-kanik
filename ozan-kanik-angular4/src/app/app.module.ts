@@ -1,8 +1,9 @@
 import * as $ from 'jquery';
 import { LoadingModule } from 'ngx-loading';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
@@ -36,9 +37,11 @@ import { CategoryFilterPipe } from './projects/category-filter.pipe';
     BrowserModule,
     HttpClientModule,
     CommonModule,
-    LoadingModule
+    LoadingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [HttpService,PreferencesService, LoadingService],
+  providers: [HttpService, PreferencesService, LoadingService],
   bootstrap: [AppComponent],
   schemas: [
     HeaderComponent
