@@ -22,14 +22,17 @@
         "styles.less",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "../node_modules/font-awesome/css/font-awesome.min.css",
-        "../node_modules/animate.css/animate.min.css"
+        "../node_modules/animate.css/animate.min.css",
+        "../node_modules/ng2-toastr/bundles/ng2-toastr.min.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
         "../node_modules/smooth-scroll/dist/js/smooth-scroll.min.js",
         "../node_modules/smooth-scroll/dist/js/smooth-scroll.polyfills.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-        "../node_modules/moment/min/moment.min.js"
+        "../node_modules/moment/min/moment.min.js",
+        "../node_modules/systemjs/dist/system-production.js",
+        "../node_modules/ng2-toastr/bundles/ng2-toastr.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

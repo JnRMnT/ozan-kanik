@@ -25,6 +25,21 @@ export class HttpService {
     });
   }
 
+  post<T>(url: string, requestObject: any): Observable<T> {
+    const me = this;
+    return Observable.create(observer => {
+      me.loadingService.active = true;
+      me.http.post<T>(this.getApiUrl(url), requestObject).subscribe(data => {
+        me.loadingService.active = false;
+        observer.onNext(data);
+        observer.onCompleted();
+      }, error => {
+        me.loadingService.active = false;
+        observer.error(error);
+      });
+    });
+  }
+
   getApiUrl(url: string): string {
     if (url.substr(0, 4) == "http") {
       return url;

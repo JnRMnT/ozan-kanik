@@ -19,6 +19,8 @@ import { SkillsComponent } from './skills/skills.component';
 import { SummaryBioComponent } from './summary-bio/summary-bio.component';
 import { DateIntervalPipe } from './date-interval.pipe';
 import { CategoryFilterPipe } from './projects/category-filter.pipe';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,9 +39,13 @@ import { CategoryFilterPipe } from './projects/category-filter.pipe';
     BrowserModule,
     HttpClientModule,
     CommonModule,
-    LoadingModule,
+    LoadingModule.forRoot({
+      fullScreenBackdrop: true
+    }),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [HttpService, PreferencesService, LoadingService],
   bootstrap: [AppComponent],
