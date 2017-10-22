@@ -7,7 +7,7 @@ export class GlobalConfig {
             {
                 name: "ExpressJS",
                 description: "ExpressJS as API, including Redis for caching",
-                location: "",
+                location: "http://localhost:1337/",
                 identifier: "expressjs",
                 isDefault: true
             }
