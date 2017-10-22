@@ -1,0 +1,12 @@
+﻿{
+  "databaseConfiguration": {
+    "serverName": "ds227045.mlab.com:27045",
+    "databaseName": "ozan-kanik-db",
+    "userName": "ozan-kanik-dbadmin",
+    "password": "EB;^qD6;j#n?B{"
+  },
+  "redisConfiguration": {
+    "host": "pub-redis-14065.eu-central-1-1.1.ec2.redislabs.com",
+    "port": "14065"
+  }
+}

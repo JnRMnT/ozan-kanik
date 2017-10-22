@@ -1,0 +1,21 @@
+﻿var config = require("../config.json");
+var jmdb: JMDBProvider = require("jm-dbprovider");
+import q = require("q");
+
+module.exports.getDBProvider = (): Q.IPromise<JMDBProvider> => {
+    var deferred = q.defer<JMDBProvider>();
+    jmdb.connect(config.databaseConfiguration.userName,
+        config.databaseConfiguration.password,
+        config.databaseConfiguration.databaseName,
+        config.databaseConfiguration.serverName).then(function () {
+            deferred.resolve(jmdb);
+        }, function (reason) {
+            deferred.reject(reason);
+        });
+
+    return deferred.promise;
+};
+
+module.exports.closeConnection = (): void => {
+    jmdb.close();
+};
