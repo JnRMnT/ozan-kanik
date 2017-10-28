@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PreferencesService } from './preferences.service';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs/Observable';
 import { LoadingService } from './loading.service';
 
@@ -14,11 +14,16 @@ export class HttpService {
     const me = this;
     return Observable.create(observer => {
       me.loadingService.active = true;
-      me.http.get<T>(this.getApiUrl(url)).subscribe(data => {
-        me.loadingService.active = false;
-        observer.onNext(data);
-        observer.onCompleted();
-      }, error => {
+      me.preferencesService.whenReady().then(resolve => {
+        me.http.get<T>(this.getApiUrl(url), me.getHttpConfig()).subscribe(data => {
+          me.loadingService.active = false;
+          observer.onNext(data);
+          observer.onCompleted();
+        }, error => {
+          me.loadingService.active = false;
+          observer.error(error);
+        });
+      }, (error) => {
         me.loadingService.active = false;
         observer.error(error);
       });
@@ -29,11 +34,16 @@ export class HttpService {
     const me = this;
     return Observable.create(observer => {
       me.loadingService.active = true;
-      me.http.post<T>(this.getApiUrl(url), requestObject).subscribe(data => {
-        me.loadingService.active = false;
-        observer.onNext(data);
-        observer.onCompleted();
-      }, error => {
+      me.preferencesService.whenReady().then(resolve => {
+        me.http.post<T>(this.getApiUrl(url), requestObject, me.getHttpConfig()).subscribe(data => {
+          me.loadingService.active = false;
+          observer.onNext(data);
+          observer.onCompleted();
+        }, error => {
+          me.loadingService.active = false;
+          observer.error(error);
+        });
+      }, (error) => {
         me.loadingService.active = false;
         observer.error(error);
       });
@@ -44,7 +54,15 @@ export class HttpService {
     if (url.substr(0, 4) == "http") {
       return url;
     } else {
-      return this.preferencesService.getSelectedAppUrl() + "/" + url;
+      return "api/" + url;
     }
+  }
+
+  getHttpConfig(): any {
+    var headers: HttpHeaders = new HttpHeaders();
+    headers = headers.append("App-Selection", this.preferencesService.getSelectedAppIdentifier());
+    return {
+      headers: headers
+    };
   }
 }

@@ -16,7 +16,6 @@ export class AppComponent {
     private loadingService: LoadingService,
     public toastr: ToastsManager,
     vcr: ViewContainerRef) {
-    preferencesService.initializePreferences();
     this.toastr.setRootViewContainerRef(vcr);
   }
 }

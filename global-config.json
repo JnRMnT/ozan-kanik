@@ -1,0 +1,20 @@
+{
+	"availableApps": [
+		{
+			"name": "ExpressJS",
+			"description": "ExpressJS as API, including Redis for caching",
+			"location": "http://localhost:1337/",
+			"identifier": "expressjs",
+			"isDefault": true
+		}	
+	],
+	"availableWebs": [
+		 {
+			"name": "Angular4",
+			"description": "Angular4 as Front-End",
+			"location": "ozan-kanik-angular4",
+			"identifier": "angular4",
+			"isDefault": true
+		}
+	]
+}

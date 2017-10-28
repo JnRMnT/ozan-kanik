@@ -6,3 +6,11 @@ interface NodeModule {
 declare class SmoothScroll {
   constructor(selector: string);
 }
+declare class AvailableProject {
+  public name: string;
+  public description: string;
+  public location: string;
+  public identifier: string;
+  public isDefault: boolean;
+}
+declare var System: any;   

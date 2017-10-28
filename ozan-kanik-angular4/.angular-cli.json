@@ -32,7 +32,9 @@
         "../node_modules/smooth-scroll/dist/js/smooth-scroll.polyfills.min.js",
         "../node_modules/moment/min/moment.min.js",
         "../node_modules/systemjs/dist/system-production.js",
-        "../node_modules/ng2-toastr/bundles/ng2-toastr.min.js"
+        "../node_modules/ng2-toastr/bundles/ng2-toastr.min.js",
+        "../node_modules/lodash/lodash.min.js",
+        "../node_modules/q/q.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
