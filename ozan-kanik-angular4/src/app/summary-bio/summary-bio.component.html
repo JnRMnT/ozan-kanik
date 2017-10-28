@@ -1,29 +1,29 @@
-<div class="container well profile">
+<div class="container well profile" *ngIf="bioSummaryInfo">
   <div class="col profile-pic text-center col-md-3">
     <img class="img-circle img-responsive animated fadeIn" src="./assets/images/me.jpg">
     <ul class="social-link">
       <li>
-        <a href="https://github.com/jnrmnt" target="_blank" title="GitHub">
+        <a [href]="bioSummaryInfo.contactInformation.github" target="_blank" title="GitHub">
           <i class="fa fa-github animated fadeIn"></i>
         </a>
       </li>
       <li>
-        <a href="https://www.facebook.com/JnRMnT" target="_blank" title="Facebook">
+        <a [href]="bioSummaryInfo.contactInformation.facebook" target="_blank" title="Facebook">
           <i class="fa fa-facebook animated fadeIn"></i>
         </a>
       </li>
       <li>
-        <a href="https://twitter.com/JnRMnT" target="_blank" title="Twitter">
+        <a [href]="bioSummaryInfo.contactInformation.twitter" target="_blank" title="Twitter">
           <i class="fa fa-twitter animated fadeIn"></i>
         </a>
       </li>
       <li>
-        <a href="https://www.linkedin.com/in/ozan-kanik-63651440" target="_blank" title="LinkedIn">
+        <a [href]="bioSummaryInfo.contactInformation.linkedin" target="_blank" title="LinkedIn">
           <i class="fa fa-linkedin animated fadeIn"></i>
         </a>
       </li>
       <li>
-        <a href="skype:ozan.kanik?chat" title="Chat on Skype">
+        <a [href]="sanitize(bioSummaryInfo.contactInformation.skype)" title="Chat on Skype">
           <i class="fa fa-skype animated fadeIn"></i>
         </a>
       </li>
@@ -40,12 +40,12 @@
         </tr>
         <tr>
           <td>LOCATION</td>
-          <td>Istanbul, TURKEY</td>
+          <td>{{bioSummaryInfo.location}}</td>
         </tr>
         <tr>
           <td>EMAIL</td>
           <td>
-            <a href="mailto:ozankanik@gmail.com">ozankanik@gmail.com</a>
+            <a [href]="bioSummaryInfo.email | mailto">{{bioSummaryInfo.email}}</a>
           </td>
         </tr>
         <tr>

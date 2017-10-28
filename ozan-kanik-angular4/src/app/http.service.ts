@@ -17,8 +17,8 @@ export class HttpService {
       me.preferencesService.whenReady().then(resolve => {
         me.http.get<T>(this.getApiUrl(url), me.getHttpConfig()).subscribe(data => {
           me.loadingService.active = false;
-          observer.onNext(data);
-          observer.onCompleted();
+          observer.next(data);
+          observer.complete();
         }, error => {
           me.loadingService.active = false;
           observer.error(error);
@@ -37,8 +37,8 @@ export class HttpService {
       me.preferencesService.whenReady().then(resolve => {
         me.http.post<T>(this.getApiUrl(url), requestObject, me.getHttpConfig()).subscribe(data => {
           me.loadingService.active = false;
-          observer.onNext(data);
-          observer.onCompleted();
+          observer.next(data);
+          observer.complete();
         }, error => {
           me.loadingService.active = false;
           observer.error(error);

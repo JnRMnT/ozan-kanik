@@ -11,11 +11,14 @@ var getSummaryInfo = function (res, type) {
         }
         jmdbProvider.find("summaryInfo", 1, findCriteria).then(function (summaryInfo) {
             if (summaryInfo && summaryInfo.length > 0) {
+                var contents = summaryInfo.map(function (item) {
+                    return item.content;
+                });
                 if (type) {
-                    res.json(summaryInfo[0]);
+                    res.json(contents[0]);
                 }
                 else {
-                    res.json(summaryInfo);
+                    res.json(contents);
                 }
             }
             else {
@@ -24,10 +27,10 @@ var getSummaryInfo = function (res, type) {
         });
     });
 };
-router.get('/summaryInfo/', function (req, res) {
+router.get('/', function (req, res) {
     getSummaryInfo(res);
 });
-router.get('/summaryInfo/:type', function (req, res) {
+router.get('/:type', function (req, res) {
     var type = req.params.type;
     getSummaryInfo(res, type);
 });

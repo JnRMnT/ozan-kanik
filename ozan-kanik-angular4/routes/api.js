@@ -20,26 +20,25 @@ function getRelativeUrl(req) {
 
 router.get('*', (req, res) => {
   const url = getRelativeUrl(req);
-  request.get(getPreferredAppUrl(req) + url).on("response", (response) => {
+  request.get(url, { json: true }, (error, response, body) => {
     if (response.statusCode === 200) {
-      res.json(response.body);
+      res.json(body);
     } else {
       res.sendStatus(response.statusCode);
     }
-  }).on("error", () => {
-    res.sendStatus(500);
   });
 });
 router.post('*', (req, res) => {
   const url = getRelativeUrl(req);
-  request.post(getPreferredAppUrl(req) + url, req.body).on("response", (response) => {
+  request.post(url, {
+    formData: req.body,
+    json: true
+  }, (error, response, body) => {
     if (response.statusCode === 200) {
-      res.json(response.body);
+      res.json(body);
     } else {
       res.sendStatus(response.statusCode);
     }
-  }).on("error", () => {
-    res.sendStatus(500);
   });
 });
 

@@ -11,10 +11,13 @@ let getSummaryInfo = (res: express.Response, type?: string) => {
         }
         jmdbProvider.find("summaryInfo", 1, findCriteria).then((summaryInfo: SummaryInfo[]) => {
             if (summaryInfo && summaryInfo.length > 0) {
+                let contents = summaryInfo.map((item) => {
+                    return item.content;
+                });
                 if (type) {
-                    res.json(summaryInfo[0]);
+                    res.json(contents[0]);
                 } else {
-                    res.json(summaryInfo);
+                    res.json(contents);
                 }
             } else {
                 res.status(404);
@@ -23,11 +26,11 @@ let getSummaryInfo = (res: express.Response, type?: string) => {
     });
 };
 
-router.get('/summaryInfo/', (req: express.Request, res: express.Response) => {
+router.get('/', (req: express.Request, res: express.Response) => {
     getSummaryInfo(res);
 });
 
-router.get('/summaryInfo/:type', (req: express.Request, res: express.Response) => {
+router.get('/:type', (req: express.Request, res: express.Response) => {
     let type = req.params.type;
     getSummaryInfo(res, type);
 });

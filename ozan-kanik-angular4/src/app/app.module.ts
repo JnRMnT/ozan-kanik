@@ -21,6 +21,7 @@ import { DateIntervalPipe } from './date-interval.pipe';
 import { CategoryFilterPipe } from './projects/category-filter.pipe';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MailtoPipe } from './mailto.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SkillsComponent,
     SummaryBioComponent,
     DateIntervalPipe,
-    CategoryFilterPipe
+    CategoryFilterPipe,
+    MailtoPipe
   ],
   imports: [
     BrowserModule,
