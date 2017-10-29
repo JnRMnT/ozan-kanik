@@ -18,6 +18,6 @@ export class PersonalContactInformation {
 
 
 export class BioSummaryInfoContent implements ISummaryInfoContent {
-    public type: string = "education";
+    public type: string = "bioSummary";
     public content: BioSummaryInfo;
 }

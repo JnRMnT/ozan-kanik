@@ -1,17 +1,11 @@
 import { ISummaryInfoContent } from './summaryInfo';
+import { EducationInfo } from '../education/education-info';
 
-export class EducationInfo {
-    public schoolName: string;
-    public description?: string;
-    public degreeName: string;
-    public beginDate: Date;
-    public endDate?: Date;
-    public gpa?: number;
-    public gpaOutOf?: number;
-    public thumbnailUrl?: string;
+export class EducationInfoContent {
+  public educationHistory: EducationInfo[];
 }
 
 export class EducationInfoSummaryContent implements ISummaryInfoContent {
     public type: string = "education";
-    public content: EducationInfo[];
+    public content: EducationInfoContent;
 }

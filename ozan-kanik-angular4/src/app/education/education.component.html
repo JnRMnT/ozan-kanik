@@ -7,7 +7,8 @@
                 </div>
                 <h4>{{education.schoolName}}</h4>
                 <i class="fa fa-calendar"></i>&nbsp;<span>({{education | dateInterval}})</span>
-                <p>{{education.description}}</p>
+                <p *ngIf="education.degreeName">{{education.degreeName}}</p>
+                <p *ngIf="education.description">{{education.description}}</p>
                 <p *ngIf="education.gpa"><b>GPA:</b> {{education.gpa}}/{{education.gpaOutOf}}</p>
             </div>
         </div>
