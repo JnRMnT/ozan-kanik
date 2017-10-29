@@ -21,7 +21,10 @@ function getRelativeUrl(req) {
 router.get('*', (req, res) => {
   const url = getRelativeUrl(req);
   request.get(url, { json: true }, (error, response, body) => {
-    if (response.statusCode === 200) {
+    if (!response) {
+      res.sendStatus(504);
+    }
+    else if (response.statusCode === 200) {
       res.json(body);
     } else {
       res.sendStatus(response.statusCode);
@@ -34,7 +37,10 @@ router.post('*', (req, res) => {
     formData: req.body,
     json: true
   }, (error, response, body) => {
-    if (response.statusCode === 200) {
+    if (!response) {
+      res.sendStatus(504);
+    }
+    else if (response.statusCode === 200) {
       res.json(body);
     } else {
       res.sendStatus(response.statusCode);

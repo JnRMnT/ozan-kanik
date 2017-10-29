@@ -23,6 +23,8 @@ let getSummaryInfo = (res: express.Response, type?: string) => {
                 res.status(404);
             }
         });
+    }, () => {
+        res.sendStatus(500);
     });
 };
 

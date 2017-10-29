@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Skill } from './skill';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-skills',
@@ -8,26 +9,23 @@ import { Skill } from './skill';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-    this.skills = [
-      { name: "CSS", progress: 40, category: "Styling" },
-      { name: "HTML", progress: 100, category: "Styling" },
-      { name: "Javascript", progress: 100, category: "Programming" },
-      { name: "C#", progress: 90, category: "Programming" },
-      { name: "C++", progress: 35, category: "Programming", description: "As a hobby" },
-    ];
-
-    this.groupCategories();
+  constructor(private httpService: HttpService) {
   }
 
-  ngAfterViewInit(){
-    (<any>$("span[title],a[title]")).tooltip();
+  ngOnInit() {
+    const me = this;
+    me.httpService.get("skills").subscribe((response: Skill[]) => {
+      me.skills = response;
+      me.groupCategories();
+      me.indexCounter = 0;
+      setTimeout(() => {
+        (<any>$("span[title],a[title]")).tooltip();
+      });
+    });
   }
 
   private groupCategories() {
-    let me = this;
+    const me = this;
     this.groupedSkills = {};
     this.skillGroups = [];
     this.skills.forEach(skill => {
@@ -40,7 +38,29 @@ export class SkillsComponent implements OnInit {
     });
   }
 
+  getCurrentSkillClass(innerIndex: number, outerIndex: number): string {
+    const me = this;
+    let totalIndex = 0;
+    for (let i = 0; i < outerIndex; i++) {
+      totalIndex += me.groupedSkills[me.skillGroups[i]].length;
+    }
+    totalIndex += innerIndex;
+    switch (totalIndex % 4) {
+      case 0:
+        return "progress-bar-success";
+      case 1:
+        return "progress-bar-info";
+      case 2:
+        return "progress-bar-warning";
+      case 3:
+        return "progress-bar-danger";
+      default:
+        return "";
+    }
+  }
+
   public skills: Skill[];
   public groupedSkills: any;
   public skillGroups: string[];
+  public indexCounter: number;
 }

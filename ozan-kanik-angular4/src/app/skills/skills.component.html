@@ -1,16 +1,15 @@
 <div class="skills container well">
   <div class="row">
-    <div class="col-md-6 col-xs-12" *ngFor="let group of skillGroups; let outerIndex = index">
+    <div class="col-md-6 col-xs-12" *ngFor="let group of skillGroups; let outerIndex = index;">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h5>{{group}}</h5>
         </div>
         <div class="panel-body">
           <div class="progress" *ngFor="let skill of groupedSkills[group]; let innerIndex = index">
-            <div class="progress-bar progress-bar-striped active" role="progressbar" [attr.aria-valuenow]="progress" aria-valuemin="0"
-              aria-valuemax="100" [style.width.%]="skill.progress" [ngClass]="{'progress-bar-success' : (outerIndex+innerIndex)%4 == 0, 'progress-bar-info' : (outerIndex+innerIndex)%4 == 1,
-          'progress-bar-warning' : (outerIndex+innerIndex) == 2, 'progress-bar-danger' : (outerIndex+innerIndex) == 3}">
-              <span [attr.title]="skill.description">{{skill.name}} : {{skill.progress / 10}}/10</span>
+            <div class="progress-bar progress-bar-striped" role="progressbar" [attr.aria-valuenow]="progress" aria-valuemin="0"
+              aria-valuemax="100" [style.width.%]="skill.progress*10" [ngClass]="getCurrentSkillClass(innerIndex,outerIndex)">
+              <span [attr.title]="skill.description">{{skill.name}} : {{skill.progress}}/10</span>
             </div>
           </div>
         </div>

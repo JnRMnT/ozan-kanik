@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkExperience } from './work-experience';
 import * as moment from 'moment';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-work-experience',
@@ -9,33 +10,14 @@ import * as moment from 'moment';
 })
 export class WorkExperienceComponent implements OnInit {
 
-  constructor() {
-    this.workExperiences = [
-      {
-        beginDate: new Date(2014, 8, 1),
-        company: "Veripark",
-        title: "Software Developer",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora.",
-        thumbnailUrl: "https://pbs.twimg.com/profile_images/557518107988602880/agcQcSfa.png"
-      },
-      {
-        beginDate: new Date(2012, 8, 1),
-        company: "Veripark",
-        title: "Software Developer",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora."
-      },
-      {
-        beginDate: new Date(2013, 8, 1),
-        endDate: new Date(2014, 8, 1),
-        company: "Veripark",
-        title: "Software Developer",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora."
-      }
-    ];
+  constructor(private httpService: HttpService) {
   }
 
   ngOnInit() {
-    this.sortExperiences();
+    const me = this;
+    me.httpService.get("workExperiences").subscribe((response: WorkExperience[]) => {
+      me.workExperiences = response;
+    });
   }
 
   public sortExperiences(): void {

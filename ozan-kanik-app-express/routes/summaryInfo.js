@@ -25,6 +25,8 @@ var getSummaryInfo = function (res, type) {
                 res.status(404);
             }
         });
+    }, function () {
+        res.sendStatus(500);
     });
 };
 router.get('/', function (req, res) {
