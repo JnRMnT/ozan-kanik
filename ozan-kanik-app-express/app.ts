@@ -6,6 +6,7 @@ import routes from './routes/index';
 import summaryInfoRoutes from './routes/summaryInfo';
 import skillsRoutes from './routes/skills';
 import workExperiencesRoutes from './routes/workExperiences';
+import projectsRoutes from './routes/projects';
 
 var app = express();
 
@@ -18,6 +19,7 @@ app.use('/', routes);
 app.use('/summaryInfo', summaryInfoRoutes);
 app.use('/skills', skillsRoutes);
 app.use('/workExperiences', workExperiencesRoutes);
+app.use('/projects', projectsRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

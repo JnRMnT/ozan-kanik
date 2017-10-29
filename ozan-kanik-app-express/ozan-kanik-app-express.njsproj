@@ -57,6 +57,9 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="routes\index.ts" />
+    <TypeScriptCompile Include="routes\projects.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="routes\skills.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

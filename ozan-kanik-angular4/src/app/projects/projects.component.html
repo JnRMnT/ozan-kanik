@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="projects">
     <div class="category-selection">
         <div class="btn-group btn-group-lg" role="group">
             <a *ngFor="let category of categories" class="btn btn-default" [ngClass]="{'active' : category == activeCategory}" (click)="activeCategory=category">
