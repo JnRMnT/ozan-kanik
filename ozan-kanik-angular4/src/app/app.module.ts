@@ -5,9 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { AppInitializerModule } from './app-initializer/app-initializer.module';
 
 import { AppComponent } from './app.component';
 import { HttpService } from './http.service';
+import { TranslateService } from './translate.service';
 import { PreferencesService } from './preferences.service';
 import { LoadingService } from './loading.service';
 import { HeaderComponent } from './header/header.component';
@@ -22,6 +24,7 @@ import { CategoryFilterPipe } from './projects/category-filter.pipe';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MailtoPipe } from './mailto.pipe';
+import { TranslatePipe } from './translate.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { MailtoPipe } from './mailto.pipe';
     SummaryBioComponent,
     DateIntervalPipe,
     CategoryFilterPipe,
-    MailtoPipe
+    MailtoPipe,
+    TranslatePipe    
   ],
   imports: [
     BrowserModule,
@@ -47,9 +51,10 @@ import { MailtoPipe } from './mailto.pipe';
     FormsModule,
     ReactiveFormsModule,
     ToastModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppInitializerModule
   ],
-  providers: [HttpService, PreferencesService, LoadingService],
+  providers: [HttpService, PreferencesService, LoadingService, TranslateService],
   bootstrap: [AppComponent],
   schemas: [
     HeaderComponent

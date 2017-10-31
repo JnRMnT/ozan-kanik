@@ -13,18 +13,18 @@ export class HttpService {
   get<T>(url: string): Observable<T> {
     const me = this;
     return Observable.create(observer => {
-      me.loadingService.active = true;
+      me.loadingService.activeLoading();
       me.preferencesService.whenReady().then(resolve => {
         me.http.get<T>(this.getApiUrl(url), me.getHttpConfig()).subscribe(data => {
-          me.loadingService.active = false;
+          me.loadingService.attemptToDeactivate();
           observer.next(data);
           observer.complete();
         }, error => {
-          me.loadingService.active = false;
+          me.loadingService.attemptToDeactivate();
           observer.error(error);
         });
       }, (error) => {
-        me.loadingService.active = false;
+        me.loadingService.attemptToDeactivate();
         observer.error(error);
       });
     });
@@ -33,18 +33,18 @@ export class HttpService {
   post<T>(url: string, requestObject: any): Observable<T> {
     const me = this;
     return Observable.create(observer => {
-      me.loadingService.active = true;
+      me.loadingService.activeLoading();
       me.preferencesService.whenReady().then(resolve => {
         me.http.post<T>(this.getApiUrl(url), requestObject, me.getHttpConfig()).subscribe(data => {
-          me.loadingService.active = false;
+          me.loadingService.attemptToDeactivate();
           observer.next(data);
           observer.complete();
         }, error => {
-          me.loadingService.active = false;
+          me.loadingService.attemptToDeactivate();
           observer.error(error);
         });
       }, (error) => {
-        me.loadingService.active = false;
+        me.loadingService.attemptToDeactivate();
         observer.error(error);
       });
     });

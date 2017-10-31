@@ -60,6 +60,9 @@
     <TypeScriptCompile Include="routes\projects.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="routes\resources.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="routes\skills.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

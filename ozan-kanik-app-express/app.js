@@ -8,6 +8,7 @@ var summaryInfo_1 = require("./routes/summaryInfo");
 var skills_1 = require("./routes/skills");
 var workExperiences_1 = require("./routes/workExperiences");
 var projects_1 = require("./routes/projects");
+var resources_1 = require("./routes/resources");
 var app = express();
 // view engine setup
 app.set('view engine', 'pug');
@@ -17,6 +18,7 @@ app.use('/summaryInfo', summaryInfo_1.default);
 app.use('/skills', skills_1.default);
 app.use('/workExperiences', workExperiences_1.default);
 app.use('/projects', projects_1.default);
+app.use('/resources', resources_1.default);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
