@@ -33,7 +33,9 @@ export class TranslateService {
       return item.culture == cultureCode;
     }).forEach((resource: Resource) => {
       me.resources[resource.key] = resource.value;
-    });
+      });
+
+    this.activeCulture = cultureCode;
   }
 
   public translate(key: string): string {
@@ -45,4 +47,5 @@ export class TranslateService {
 
   public resources: any;
   public allResources: Resource[];
+  public activeCulture: string;
 }

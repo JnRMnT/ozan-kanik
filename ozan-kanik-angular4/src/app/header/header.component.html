@@ -1,24 +1,29 @@
 <header>
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
+      <div class="lang-selection">
+        <a [title]="'Title.en-US' | translate" (click)="changeLanguage('en-US')" href="#" data-placement="bottom">EN</a>
+        |
+        <a [title]="'Title.tr-TR' | translate" (click)="changeLanguage('tr-TR')" href="#" data-placement="bottom">TR</a>
+      </div>
       <ul class="nav navbar-nav text-center">
         <li>
-            <a class="smooth" href="#about-me">About Me</a>
+            <a class="smooth" href="#about-me">{{'Title.AboutMe' | translate}}</a>
         </li>
         <li>
-            <a class="smooth" href="#skills">Skills</a>
+            <a class="smooth" href="#skills">{{'Title.Skills' | translate}}</a>
         </li>
         <li>
-            <a class="smooth" href="#work-experience">Work Experience</a>
+            <a class="smooth" href="#work-experience">{{'Title.WorkExperience' | translate}}</a>
         </li>
         <li>
-            <a class="smooth" href="#projects">Projects</a>
+            <a class="smooth" href="#projects">{{'Title.Projects' | translate}}</a>
         </li>
         <li>
-            <a class="smooth" href="#education">Education</a>
+            <a class="smooth" href="#education">{{'Title.Education' | translate}}</a>
         </li>
         <li>
-            <a class="smooth" href="#contact">Contact</a>
+            <a class="smooth" href="#contact">{{'Title.Contact' | translate}}</a>
         </li>
       </ul>
     </div>
