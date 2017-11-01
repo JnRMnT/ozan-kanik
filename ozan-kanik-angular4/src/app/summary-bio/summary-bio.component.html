@@ -35,21 +35,21 @@
     <table class="table table-responsive">
       <tbody>
         <tr>
-          <td>AGE</td>
+          <td>{{'Title.Age' | translate}}</td>
           <td>{{age}}</td>
         </tr>
         <tr>
-          <td>LOCATION</td>
+          <td>{{'Title.Location' | translate}}</td>
           <td>{{bioSummaryInfo.location}}</td>
         </tr>
         <tr>
-          <td>EMAIL</td>
+          <td>{{'Title.Email' | translate}}</td>
           <td>
             <a [href]="bioSummaryInfo.email | mailto">{{bioSummaryInfo.email}}</a>
           </td>
         </tr>
         <tr>
-          <td>PHONE</td>
+          <td>{{'Title.Phone' | translate}}</td>
           <td>
             <canvas width="150" height="15" id="phoneCanvas"></canvas>
           </td>
