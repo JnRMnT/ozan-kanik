@@ -8,7 +8,7 @@
         <div class="panel-body">
           <div class="progress" *ngFor="let skill of groupedSkills[group]; let innerIndex = index">
             <div class="progress-bar progress-bar-striped" role="progressbar" [attr.aria-valuenow]="progress" aria-valuemin="0"
-              aria-valuemax="100" [style.width.%]="skill.progress*10" [ngClass]="getCurrentSkillClass(skill.progress)">
+              aria-valuemax="100" [style.width.%]="skill.progress*10" [ngClass]="getCurrentSkillClass(innerIndex,outerIndex)">
               <span [attr.title]="skill.description | translate">{{skill.name}} : {{skill.progress}}/10</span>
             </div>
           </div>

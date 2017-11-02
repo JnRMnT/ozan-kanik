@@ -5,10 +5,10 @@
                 <div *ngIf="education.thumbnailUrl">
                     <img class="img-thumbnail img-responsive" [src]="education.thumbnailUrl" width="75" />
                 </div>
-                <h4>{{education.schoolName}}</h4>
+                <h4>{{education.schoolName | translate}}</h4>
                 <i class="fa fa-calendar"></i>&nbsp;<span>({{education | dateInterval}})</span>
-                <p *ngIf="education.degreeName">{{education.degreeName}}</p>
-                <p *ngIf="education.description">{{education.description}}</p>
+                <p *ngIf="education.degreeName">{{education.degreeName | translate}}</p>
+                <p *ngIf="education.description">{{education.description | translate}}</p>
                 <p *ngIf="education.gpa"><b>GPA:</b> {{education.gpa}}/{{education.gpaOutOf}}</p>
             </div>
         </div>

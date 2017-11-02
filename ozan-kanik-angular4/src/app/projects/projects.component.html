@@ -2,7 +2,7 @@
     <div class="category-selection">
         <div class="btn-group btn-group-lg" role="group">
             <a *ngFor="let category of categories" class="btn btn-default" [ngClass]="{'active' : category == activeCategory}" (click)="activeCategory=category">
-                {{category == '-1' ? 'ALL' : category}}
+                {{category == '-1' ? ('Title.ALL' | translate) : (('Title.' + category) | translate)}}
             </a>
         </div>
     </div>
@@ -19,7 +19,7 @@
                     </h4>
                     <h5>
                         <i class="fa fa-calendar"></i>{{project | dateInterval}}</h5>
-                    <p>{{project.description}}</p>
+                    <p>{{project.description | translate }}</p>
                 </div>
             </div>
         </div>

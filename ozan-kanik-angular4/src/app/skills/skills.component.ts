@@ -38,15 +38,24 @@ export class SkillsComponent implements OnInit {
     });
   }
 
-  getCurrentSkillClass(progress: number): string {
-    if (progress > 7.5) {
-      return "progress-bar-info";
-    } else if (progress > 5) {
-      return "progress-bar-success";
-    } else if (progress > 2.5) {
-      return "progress-bar-warning";
-    } else {
-      return "progress-bar-danger";
+  getCurrentSkillClass(innerIndex: number, outerIndex: number): string {
+    const me = this;
+    let totalIndex = 0;
+    for (let i = 0; i < outerIndex; i++) {
+      totalIndex += me.groupedSkills[me.skillGroups[i]].length;
+    }
+    totalIndex += innerIndex;
+    switch (totalIndex % 4) {
+      case 0:
+        return "progress-bar-success";
+      case 1:
+        return "progress-bar-info";
+      case 2:
+        return "progress-bar-warning";
+      case 3:
+        return "progress-bar-danger";
+      default:
+        return "";
     }
   }
 
