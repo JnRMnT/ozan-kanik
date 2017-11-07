@@ -1,6 +1,7 @@
 ﻿import debug = require('debug');
 import express = require('express');
 import path = require('path');
+import bodyParser = require('body-parser')
 
 import routes from './routes/index';
 import summaryInfoRoutes from './routes/summaryInfo';
@@ -16,6 +17,7 @@ var app = express();
 
 // view engine setup
 app.set('view engine', 'pug');
+app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -34,7 +34,7 @@ router.get('*', (req, res) => {
 router.post('*', (req, res) => {
   const url = getRelativeUrl(req);
   request.post(url, {
-    formData: req.body,
+    body: req.body,
     json: true
   }, (error, response, body) => {
     if (!response) {

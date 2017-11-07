@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var debug = require("debug");
 var express = require("express");
 var path = require("path");
+var bodyParser = require("body-parser");
 var index_1 = require("./routes/index");
 var summaryInfo_1 = require("./routes/summaryInfo");
 var skills_1 = require("./routes/skills");
@@ -14,6 +15,7 @@ var configurationManager = require('./managers/configuration-manager');
 var app = express();
 // view engine setup
 app.set('view engine', 'pug');
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index_1.default);
 app.use('/summaryInfo', summaryInfo_1.default);

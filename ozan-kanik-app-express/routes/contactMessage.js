@@ -7,7 +7,7 @@ var configurationManager = require('../managers/configuration-manager');
 //contactMail
 router.post('/', function (req, res) {
     var request = req.body;
-    var senderInfo = '"' + request.fullName + '" <' + request.emailAddress + '>';
+    var senderInfo = '"' + request.fullName + '(' + request.emailAddress + ')" <' + request.emailAddress + '>';
     emailManager.sendMail(senderInfo, configurationManager.getConfiguration("contactMail"), request.subject, request.message).then(function () {
         res.sendStatus(200);
     }, function () {

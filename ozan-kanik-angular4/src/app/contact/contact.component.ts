@@ -19,7 +19,7 @@ export class ContactComponent implements OnInit {
 
   public submitContactInfo(form: any): void {
     const me = this;
-    me.httpService.post("contact", me.contactInfo).subscribe(success => {
+    me.httpService.post("contactMessage", me.contactInfo).subscribe(success => {
       me.toastsManager.success("Your message has ben successfully sent!", "Success");
     }, fail => {
       me.toastsManager.error("There was an error sending your message, please try again.", "Error");
