@@ -12,5 +12,4 @@ var TestSummaryInfoContent = (function () {
     return TestSummaryInfoContent;
 }());
 exports.TestSummaryInfoContent = TestSummaryInfoContent;
-module.exports = new SummaryInfo();
 //# sourceMappingURL=summaryInfo.js.map

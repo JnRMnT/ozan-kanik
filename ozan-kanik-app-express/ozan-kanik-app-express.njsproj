@@ -37,8 +37,17 @@
     <TypeScriptCompile Include="managers\cache-manager.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="managers\configuration-manager.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="managers\db-manager.ts" />
+    <TypeScriptCompile Include="managers\email-manager.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="models\bioSummaryInfo.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="models\configurationParameter.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="models\contactInfo.ts">
@@ -54,6 +63,9 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="models\summaryInfo.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="routes\contactMessage.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="routes\index.ts" />
@@ -79,6 +91,9 @@
     <TypeScriptCompile Include="test\db-connectivity-tests.ts">
       <SubType>Code</SubType>
       <TestFramework>Mocha</TestFramework>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="test\mail-tests.ts">
+      <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="typings\globals\express\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\express-serve-static-core\index.d.ts" />

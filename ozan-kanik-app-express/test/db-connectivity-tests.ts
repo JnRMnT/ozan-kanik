@@ -6,7 +6,7 @@ import { SummaryInfo, TestSummaryInfoContent } from "../models/summaryInfo";
 
 describe("DB Connectivity Tests", () => {
     it("Open connection test", () => {
-        jmdbProvider.connect(configuration.databaseConfiguration.userName,
+        return jmdbProvider.connect(configuration.databaseConfiguration.userName,
             configuration.databaseConfiguration.password,
             configuration.databaseConfiguration.databaseName,
             configuration.databaseConfiguration.serverName)
@@ -18,7 +18,7 @@ describe("DB Connectivity Tests", () => {
     });
 
     it("Summary info crud test", () => {
-        jmdbProvider.connect(configuration.databaseConfiguration.userName,
+        return jmdbProvider.connect(configuration.databaseConfiguration.userName,
             configuration.databaseConfiguration.password,
             configuration.databaseConfiguration.databaseName,
             configuration.databaseConfiguration.serverName)

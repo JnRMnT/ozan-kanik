@@ -9,6 +9,8 @@ var skills_1 = require("./routes/skills");
 var workExperiences_1 = require("./routes/workExperiences");
 var projects_1 = require("./routes/projects");
 var resources_1 = require("./routes/resources");
+var contactMessage_1 = require("./routes/contactMessage");
+var configurationManager = require('./managers/configuration-manager');
 var app = express();
 // view engine setup
 app.set('view engine', 'pug');
@@ -19,6 +21,7 @@ app.use('/skills', skills_1.default);
 app.use('/workExperiences', workExperiences_1.default);
 app.use('/projects', projects_1.default);
 app.use('/resources', resources_1.default);
+app.use('/contactMessage', contactMessage_1.default);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
@@ -39,7 +42,11 @@ app.use(function (err, req, res, next) {
     res.sendStatus(err['status'] || 500);
 });
 app.set('port', process.env.PORT || 3000);
-var server = app.listen(app.get('port'), function () {
-    debug('Express server listening on port ' + server.address().port);
+configurationManager.initializeConfigurations().then(function () {
+    var server = app.listen(app.get('port'), function () {
+        debug('Express server listening on port ' + server.address().port);
+    });
+}, function () {
+    debug('Error getting configurations for the server');
 });
 //# sourceMappingURL=app.js.map

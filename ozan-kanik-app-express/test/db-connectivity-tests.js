@@ -7,7 +7,7 @@ var configuration = require('../config');
 var summaryInfo_1 = require("../models/summaryInfo");
 describe("DB Connectivity Tests", function () {
     it("Open connection test", function () {
-        jmdbProvider.connect(configuration.databaseConfiguration.userName, configuration.databaseConfiguration.password, configuration.databaseConfiguration.databaseName, configuration.databaseConfiguration.serverName)
+        return jmdbProvider.connect(configuration.databaseConfiguration.userName, configuration.databaseConfiguration.password, configuration.databaseConfiguration.databaseName, configuration.databaseConfiguration.serverName)
             .then(function (success) {
             assert.ok(true, "Successfully connected to database.");
         }, function (fail) {
@@ -15,7 +15,7 @@ describe("DB Connectivity Tests", function () {
         });
     });
     it("Summary info crud test", function () {
-        jmdbProvider.connect(configuration.databaseConfiguration.userName, configuration.databaseConfiguration.password, configuration.databaseConfiguration.databaseName, configuration.databaseConfiguration.serverName)
+        return jmdbProvider.connect(configuration.databaseConfiguration.userName, configuration.databaseConfiguration.password, configuration.databaseConfiguration.databaseName, configuration.databaseConfiguration.serverName)
             .then(function (success) {
             var dummySummaryInfo = new summaryInfo_1.SummaryInfo();
             dummySummaryInfo.type = "test";

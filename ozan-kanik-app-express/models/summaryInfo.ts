@@ -13,5 +13,3 @@ export interface ISummaryInfoContent {
 export class TestSummaryInfoContent implements ISummaryInfoContent {
     public testValue: string;
 }
-
-module.exports = new SummaryInfo();
