@@ -3,27 +3,27 @@
         <form #contactForm="ngForm" (ngSubmit)="submitContactInfo(contactForm.value)">
             <div class="col-xs-10 col-xs-offset-1 well col-md-8 col-md-offset-2">
                 <div class="form-group" [ngClass]="{'has-error' : fullName.invalid && (fullName.dirty || fullName.touched)}">
-                    <label for="fullname">Full Name:</label>
-                    <input type="text" required [(ngModel)]="contactInfo.fullName" class="form-control" id="fullname" placeholder="Full Name*"
+                    <label for="fullname">{{'Title.FullName' | translate}}*:</label>
+                    <input type="text" required [(ngModel)]="contactInfo.fullName" class="form-control" id="fullname" [placeholder]="'Title.FullName' | translate"
                         #fullName="ngModel" name="fullanme" />
                 </div>
                 <div class="form-group" [ngClass]="{'has-error' : subject.invalid && (subject.dirty || subject.touched)}">
-                    <label for="subject">Subject:</label>
-                    <input type="text" required [(ngModel)]="contactInfo.subject" class="form-control" id="subject" placeholder="Subject*" #subject="ngModel"
+                    <label for="subject">{{'Title.Subject' | translate}}*:</label>
+                    <input type="text" required [(ngModel)]="contactInfo.subject" class="form-control" id="subject" [placeholder]="'Title.Subject' | translate" #subject="ngModel"
                         name="subject" />
                 </div>
                 <div class="form-group" [ngClass]="{'has-error' : emailAddress.invalid && (emailAddress.dirty || emailAddress.touched)}">
-                    <label for="emailAddress">Email address:</label>
-                    <input type="email" required [(ngModel)]="contactInfo.emailAddress" class="form-control" id="emailAddress" placeholder="Your e-mail address*"
-                        #emailAddress="ngModel" name="emailAddress">
+                    <label for="emailAddress">{{'Title.EmailAddress' | translate}}*:</label>
+                    <input type="email" required [(ngModel)]="contactInfo.emailAddress" class="form-control" id="emailAddress" [placeholder]="'Title.EmailAddress' | translate"
+                        #emailAddress="ngModel" name="emailAddress" pattern='^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'>
                 </div>
                 <div class="form-group" [ngClass]="{'has-error' : message.invalid && (message.dirty || message.touched)}">
-                    <label for="message">Message:</label>
+                    <label for="message">{{'Title.Message' | translate}}*:</label>
                     <textarea required [(ngModel)]="contactInfo.message" class="form-control" name="message" id="message" rows="3" #message="ngModel"></textarea>
                 </div>
                 <div class="text-center">
                     <button class="contact-button btn btn-info" type="submit" [disabled]="!contactForm.valid">
-                        <i class="fa fa-paper-plane"></i>Contact
+                        <i class="fa fa-paper-plane"></i>{{'Title.Contact' | translate}}
                     </button>
                 </div>
             </div>

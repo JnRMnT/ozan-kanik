@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContactInfo } from './contact-info';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { HttpService } from '../http.service';
+import { TranslateService } from '../translate.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +11,7 @@ import { HttpService } from '../http.service';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private toastsManager: ToastsManager) {
+  constructor(private httpService: HttpService, private toastsManager: ToastsManager, private translateService: TranslateService) {
     this.contactInfo = new ContactInfo();
   }
 
@@ -20,9 +21,9 @@ export class ContactComponent implements OnInit {
   public submitContactInfo(form: any): void {
     const me = this;
     me.httpService.post("contactMessage", me.contactInfo).subscribe(success => {
-      me.toastsManager.success("Your message has ben successfully sent!", "Success");
+      me.toastsManager.success(me.translateService.translate("Description.MailSuccess") , me.translateService.translate("Title.Success"));
     }, fail => {
-      me.toastsManager.error("There was an error sending your message, please try again.", "Error");
+      me.toastsManager.error(me.translateService.translate("Description.MailError"), me.translateService.translate("Title.Error"));
     });
   }
 
