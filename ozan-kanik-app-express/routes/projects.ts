@@ -8,7 +8,11 @@ router.get('/', (req: express.Request, res: express.Response) => {
     dbManager.getDBProvider().then((jmdbProvider: JMDBProvider) => {
         jmdbProvider.find("projects", undefined, undefined, [{
             direction: SortDirection.Descending,
-            fieldName: "order"
+            fieldName: "beginDate"
+        },
+        {
+            direction: SortDirection.Descending,
+            fieldName: "endDate"
         }]).then((projects: Project[]) => {
             res.json(projects);
         }, () => {
