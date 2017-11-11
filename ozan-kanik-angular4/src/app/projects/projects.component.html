@@ -1,27 +1,30 @@
 <div class="container" *ngIf="projects">
-    <div class="category-selection">
-        <div class="btn-group btn-group-lg" role="group">
-            <a *ngFor="let category of categories" class="btn btn-default" [ngClass]="{'active' : category == activeCategory}" (click)="activeCategory=category">
-                {{category == '-1' ? ('Title.ALL' | translate) : (('Title.' + category) | translate)}}
-            </a>
-        </div>
+  <div class="category-selection">
+    <div class="btn-group btn-group-lg" role="group">
+      <a *ngFor="let category of categories" class="btn btn-default" [ngClass]="{'active' : category == activeCategory}" (click)="activeCategory=category;checkScrolls();">
+        {{category == '-1' ? ('Title.ALL' | translate) : (('Title.' + category) | translate)}}
+      </a>
     </div>
-    <div class="row">
-        <div *ngFor="let project of projects | categoryFilter: activeCategory" class="col-lg-4 col-md-6 col-sm-12 animated fadeIn container">
-            <div class="thumbnail">
-                <img [src]="project.thumbnailUrl" class="img-thumbnail img-responsive" />
-                <div class="caption">
-                    <h4>
-                        <a target="_blank" *ngIf="project.projectUrl; else plainTextName" [href]="project.projectUrl" [title]="project.name">{{project.name}}</a>
-                        <ng-template #plainTextName>
-                                <span ngElse>{{project.name}}</span>
-                        </ng-template>
-                    </h4>
-                    <h5>
-                        <i class="fa fa-calendar"></i>{{project | dateInterval}}</h5>
-                    <p>{{project.description | translate }}</p>
-                </div>
-            </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let project of projects | categoryFilter: activeCategory" class="col-lg-4 col-md-6 col-sm-12 animated fadeIn container">
+      <div class="thumbnail">
+        <img [src]="project.thumbnailUrl" class="img-thumbnail img-responsive" />
+        <div class="caption">
+          <h4>
+            <a target="_blank" *ngIf="project.projectUrl; else plainTextName" [href]="project.projectUrl" [title]="project.name">{{project.name}}</a>
+            <ng-template #plainTextName>
+              <span ngElse>{{project.name}}</span>
+            </ng-template>
+          </h4>
+          <h5>
+            <strong>
+              <i class="fa fa-calendar"></i>{{project | dateInterval}}
+            </strong>
+          </h5>
+          <p>{{project.description | translate }}</p>
         </div>
+      </div>
     </div>
+  </div>
 </div>

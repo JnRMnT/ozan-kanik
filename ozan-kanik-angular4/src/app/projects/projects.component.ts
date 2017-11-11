@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Project } from './project';
 import * as moment from 'moment';
 import { HttpService } from '../http.service';
@@ -8,7 +8,7 @@ import { HttpService } from '../http.service';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.less']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit, AfterViewInit {
 
   constructor(private httpService: HttpService) {
   }
@@ -18,6 +18,28 @@ export class ProjectsComponent implements OnInit {
     me.httpService.get("projects").subscribe((response: Project[]) => {
       me.projects = response;
       me.arrangeCategories();
+    });
+  }
+
+  ngAfterViewInit(): void {
+    const me = this;
+    $(window).on("resize", (<any>window)._.debounce(() => {
+      me.checkScrolls();
+    }, 150));
+    me.checkScrolls();
+  }
+
+  public checkScrolls(): void {
+    setTimeout(() => {
+      $("#projects .thumbnail .caption").each((index, projectWrapper) => {
+        if ($(window).width() > 960) {
+          (<any>$(projectWrapper)).slimScroll({
+            height: '250px'
+          });
+        } else {
+          (<any>$(projectWrapper)).slimScroll({ destroy: true });
+        }
+      });
     });
   }
 

@@ -34,7 +34,8 @@
         "../node_modules/systemjs/dist/system-production.js",
         "../node_modules/ng2-toastr/bundles/ng2-toastr.min.js",
         "../node_modules/lodash/lodash.min.js",
-        "../node_modules/q/q.js"
+        "../node_modules/q/q.js",
+        "../node_modules/jquery-slimscroll/jquery.slimscroll.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

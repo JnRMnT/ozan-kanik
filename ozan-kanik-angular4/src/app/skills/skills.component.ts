@@ -28,6 +28,21 @@ export class SkillsComponent implements OnInit {
     const me = this;
     this.groupedSkills = {};
     this.skillGroups = [];
+    this.skills.sort((skill1: Skill, skill2: Skill) => {
+      if (skill1.order == undefined && skill2.order != undefined) {
+        return 0;
+      } else if (skill1.order != undefined && skill2.order == undefined) {
+        return - 1;
+      } else if (skill1.order == undefined && skill2.order != undefined) {
+        return 1;
+      } else if (skill1.order < skill2.order) {
+        return -1;
+      } else if (skill2.order < skill1.order) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
     this.skills.forEach(skill => {
       if (me.groupedSkills[skill.category]) {
         me.groupedSkills[skill.category].push(skill);

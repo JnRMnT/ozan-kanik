@@ -3,7 +3,7 @@
     <div class="col-md-6 col-xs-12" *ngFor="let group of skillGroups; let outerIndex = index;">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h5>{{group}}</h5>
+          <h5><strong>{{group}}</strong></h5>
         </div>
         <div class="panel-body">
           <div class="progress" *ngFor="let skill of groupedSkills[group]; let innerIndex = index">
