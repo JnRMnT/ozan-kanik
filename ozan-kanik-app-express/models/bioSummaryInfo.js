@@ -1,23 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var BioSummaryInfo = (function () {
-    function BioSummaryInfo() {
-    }
-    return BioSummaryInfo;
-}());
+class BioSummaryInfo {
+}
 exports.BioSummaryInfo = BioSummaryInfo;
-var PersonalContactInformation = (function () {
-    function PersonalContactInformation() {
-    }
-    return PersonalContactInformation;
-}());
+class PersonalContactInformation {
+}
 exports.PersonalContactInformation = PersonalContactInformation;
-var BioSummaryInfoContent = (function () {
-    function BioSummaryInfoContent() {
+class BioSummaryInfoContent {
+    constructor() {
         this.type = "education";
     }
-    return BioSummaryInfoContent;
-}());
+}
 exports.BioSummaryInfoContent = BioSummaryInfoContent;
 module.exports = new BioSummaryInfoContent();
 //# sourceMappingURL=bioSummaryInfo.js.map

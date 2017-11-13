@@ -1,18 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /// <reference path="../typings/index.d.ts" />
-var assert = require("assert");
-var cacheManager = require("../managers/cache-manager");
-describe("Caching Tests", function () {
-    it("Basic get/set Test", function () {
+const assert = require("assert");
+const cacheManager = require("../managers/cache-manager");
+describe("Caching Tests", () => {
+    it("Basic get/set Test", () => {
         return cacheManager.set("key", "value")
-            .then(function (success) {
-            return cacheManager.get("key").then(function (value) {
+            .then(success => {
+            return cacheManager.get("key").then((value) => {
                 assert.equal(value, "value");
-            }, function (fail) {
+            }, fail => {
                 assert.fail();
             });
-        }, function (fail) {
+        }, fail => {
             assert.fail();
         });
     });

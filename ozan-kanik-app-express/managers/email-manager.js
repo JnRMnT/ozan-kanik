@@ -1,17 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var configurationManager = require('../managers/configuration-manager');
-var nodemailer = require('nodemailer');
-var q = require("q");
-var EmailManager = (function () {
-    function EmailManager() {
-    }
-    EmailManager.prototype.sendMail = function (from, to, subject, body) {
-        var deferred = q.defer();
-        var smtpServer = configurationManager.getConfiguration("smtpServer");
-        var mailUsername = configurationManager.getConfiguration("mailUsername");
-        var mailPassword = configurationManager.getConfiguration("mailPassword");
-        var transporter = nodemailer.createTransport({
+const configurationManager = require('../managers/configuration-manager');
+const nodemailer = require('nodemailer');
+const q = require("q");
+class EmailManager {
+    sendMail(from, to, subject, body) {
+        let deferred = q.defer();
+        const smtpServer = configurationManager.getConfiguration("smtpServer");
+        const mailUsername = configurationManager.getConfiguration("mailUsername");
+        const mailPassword = configurationManager.getConfiguration("mailPassword");
+        let transporter = nodemailer.createTransport({
             host: smtpServer,
             port: 465,
             secure: true,
@@ -20,23 +18,22 @@ var EmailManager = (function () {
                 pass: mailPassword
             }
         });
-        var mailOptions = {
+        let mailOptions = {
             from: from,
             to: to,
             subject: subject,
             text: body
         };
         // send mail with defined transport object
-        transporter.sendMail(mailOptions, function (error, info) {
+        transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 deferred.reject();
             }
             deferred.resolve();
         });
         return deferred.promise;
-    };
-    return EmailManager;
-}());
+    }
+}
 exports.EmailManager = EmailManager;
 module.exports = new EmailManager();
 //# sourceMappingURL=email-manager.js.map

@@ -1,17 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var debug = require("debug");
-var express = require("express");
-var path = require("path");
-var bodyParser = require("body-parser");
-var index_1 = require("./routes/index");
-var summaryInfo_1 = require("./routes/summaryInfo");
-var skills_1 = require("./routes/skills");
-var workExperiences_1 = require("./routes/workExperiences");
-var projects_1 = require("./routes/projects");
-var resources_1 = require("./routes/resources");
-var contactMessage_1 = require("./routes/contactMessage");
-var configurationManager = require('./managers/configuration-manager');
+const debug = require("debug");
+const express = require("express");
+const path = require("path");
+const bodyParser = require("body-parser");
+const index_1 = require("./routes/index");
+const summaryInfo_1 = require("./routes/summaryInfo");
+const skills_1 = require("./routes/skills");
+const workExperiences_1 = require("./routes/workExperiences");
+const projects_1 = require("./routes/projects");
+const resources_1 = require("./routes/resources");
+const contactMessage_1 = require("./routes/contactMessage");
+const configurationManager = require('./managers/configuration-manager');
 var app = express();
 // view engine setup
 app.set('view engine', 'pug');
@@ -34,21 +34,21 @@ app.use(function (req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
+    app.use((err, req, res, next) => {
         res.sendStatus(err['status'] || 500);
     });
 }
 // production error handler
 // no stacktraces leaked to user
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
     res.sendStatus(err['status'] || 500);
 });
-app.set('port', process.env.PORT || 3000);
-configurationManager.initializeConfigurations().then(function () {
+app.set('port', process.env.PORT || 1337);
+configurationManager.initializeConfigurations().then(() => {
     var server = app.listen(app.get('port'), function () {
         debug('Express server listening on port ' + server.address().port);
     });
-}, function () {
+}, () => {
     debug('Error getting configurations for the server');
 });
 //# sourceMappingURL=app.js.map

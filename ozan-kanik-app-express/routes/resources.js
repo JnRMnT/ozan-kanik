@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var express = require("express");
-var router = express.Router();
-var dbManager = require('../managers/db-manager');
-router.get('/', function (req, res) {
-    dbManager.getDBProvider().then(function (jmdbProvider) {
-        jmdbProvider.find("resources").then(function (resources) {
+const express = require("express");
+const router = express.Router();
+let dbManager = require('../managers/db-manager');
+router.get('/', (req, res) => {
+    dbManager.getDBProvider().then((jmdbProvider) => {
+        jmdbProvider.find("resources").then((resources) => {
             res.json(resources);
-        }, function () {
+        }, () => {
             res.sendStatus(500);
         });
     });

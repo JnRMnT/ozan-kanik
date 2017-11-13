@@ -1,36 +1,34 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var globalConfig = require("../../global-config.json");
-var dbManager = require("./db-manager");
-var cacheManager = require("./cache-manager");
-var q = require("q");
-var ConfigurationManager = (function () {
-    function ConfigurationManager() {
-    }
-    ConfigurationManager.prototype.initializeConfigurations = function () {
-        var deferred = q.defer();
-        dbManager.getDBProvider().then(function (jmdbProvider) {
-            jmdbProvider.find(("configurationParameters")).then(function (configurationParameters) {
+const globalConfig = require("../../global-config.json");
+const dbManager = require("./db-manager");
+const cacheManager = require("./cache-manager");
+const q = require("q");
+class ConfigurationManager {
+    initializeConfigurations() {
+        let deferred = q.defer();
+        dbManager.getDBProvider().then((jmdbProvider) => {
+            jmdbProvider.find(("configurationParameters")).then((configurationParameters) => {
                 global.configurationParameters = configurationParameters;
                 cacheManager.set("configurationParameters", configurationParameters);
                 deferred.resolve(configurationParameters);
-            }, function (error) { deferred.reject(error); });
-        }, function (error) { deferred.reject(error); });
+            }, (error) => { deferred.reject(error); });
+        }, (error) => { deferred.reject(error); });
         return deferred.promise;
-    };
+    }
     ;
-    ConfigurationManager.prototype.getConfigurations = function () {
-        var me = this;
+    getConfigurations() {
+        const me = this;
         if (global.configurationParameters) {
             return global.configurationParameters;
         }
         else {
-            cacheManager.get("configurationParameters").then(function (configurationParameters) {
+            cacheManager.get("configurationParameters").then((configurationParameters) => {
                 if (configurationParameters) {
                     global.configurationParameters = configurationParameters;
                 }
                 else {
-                    me.initializeConfigurations().then(function (configurationParameters) {
+                    me.initializeConfigurations().then((configurationParameters) => {
                         cacheManager.set("configurationParameters", configurationParameters);
                         global.configurationParameters = configurationParameters;
                     });
@@ -38,12 +36,12 @@ var ConfigurationManager = (function () {
             });
             return undefined;
         }
-    };
+    }
     ;
-    ConfigurationManager.prototype.getConfiguration = function (key) {
-        var configurationParameters = this.getConfigurations();
+    getConfiguration(key) {
+        let configurationParameters = this.getConfigurations();
         if (configurationParameters) {
-            var foundParameters = configurationParameters.filter(function (parameter) {
+            let foundParameters = configurationParameters.filter((parameter) => {
                 return parameter.key == key;
             });
             if (foundParameters && foundParameters.length > 0) {
@@ -53,10 +51,9 @@ var ConfigurationManager = (function () {
                 return "";
             }
         }
-    };
+    }
     ;
-    return ConfigurationManager;
-}());
+}
 exports.ConfigurationManager = ConfigurationManager;
 ;
 module.exports = new ConfigurationManager();

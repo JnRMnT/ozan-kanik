@@ -1,0 +1,2 @@
+﻿# ozan-kanik
+This projects serves as a Proxy. It handles web selection of users and serves the appropriate web client to end-user. It also provides an api route in which it redirects the request to selection api server of the user.

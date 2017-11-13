@@ -1,16 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var express = require("express");
-var router = express.Router();
-var emailManager = require('../managers/email-manager');
-var configurationManager = require('../managers/configuration-manager');
+const express = require("express");
+const router = express.Router();
+const emailManager = require('../managers/email-manager');
+const configurationManager = require('../managers/configuration-manager');
 //contactMail
-router.post('/', function (req, res) {
-    var request = req.body;
-    var senderInfo = '"' + request.fullName + '(' + request.emailAddress + ')" <' + request.emailAddress + '>';
-    emailManager.sendMail(senderInfo, configurationManager.getConfiguration("contactMail"), request.subject, request.message).then(function () {
+router.post('/', (req, res) => {
+    let request = req.body;
+    let senderInfo = '"' + request.fullName + '(' + request.emailAddress + ')" <' + request.emailAddress + '>';
+    emailManager.sendMail(senderInfo, configurationManager.getConfiguration("contactMail"), request.subject, request.message).then(() => {
         res.sendStatus(200);
-    }, function () {
+    }, () => {
         res.sendStatus(500);
     });
 });

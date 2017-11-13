@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var config = require("../config.json");
 var jmdb = require("jm-dbprovider");
-var q = require("q");
-module.exports.getDBProvider = function () {
+const q = require("q");
+module.exports.getDBProvider = () => {
     var deferred = q.defer();
     jmdb.connect(config.databaseConfiguration.userName, config.databaseConfiguration.password, config.databaseConfiguration.databaseName, config.databaseConfiguration.serverName).then(function () {
         deferred.resolve(jmdb);
@@ -12,7 +12,7 @@ module.exports.getDBProvider = function () {
     });
     return deferred.promise;
 };
-module.exports.closeConnection = function () {
+module.exports.closeConnection = () => {
     jmdb.close();
 };
 //# sourceMappingURL=db-manager.js.map

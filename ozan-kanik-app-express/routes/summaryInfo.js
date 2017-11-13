@@ -1,17 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var express = require("express");
-var router = express.Router();
-var dbManager = require('../managers/db-manager');
-var getSummaryInfo = function (res, type) {
-    dbManager.getDBProvider().then(function (jmdbProvider) {
-        var findCriteria = undefined;
+const express = require("express");
+const router = express.Router();
+let dbManager = require('../managers/db-manager');
+let getSummaryInfo = (res, type) => {
+    dbManager.getDBProvider().then((jmdbProvider) => {
+        let findCriteria = undefined;
         if (type) {
             findCriteria = { type: type };
         }
-        jmdbProvider.find("summaryInfo", 1, findCriteria).then(function (summaryInfo) {
+        jmdbProvider.find("summaryInfo", 1, findCriteria).then((summaryInfo) => {
             if (summaryInfo && summaryInfo.length > 0) {
-                var contents = summaryInfo.map(function (item) {
+                let contents = summaryInfo.map((item) => {
                     return item.content;
                 });
                 if (type) {
@@ -25,15 +25,15 @@ var getSummaryInfo = function (res, type) {
                 res.status(404);
             }
         });
-    }, function () {
+    }, () => {
         res.sendStatus(500);
     });
 };
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
     getSummaryInfo(res);
 });
-router.get('/:type', function (req, res) {
-    var type = req.params.type;
+router.get('/:type', (req, res) => {
+    let type = req.params.type;
     getSummaryInfo(res, type);
 });
 exports.default = router;

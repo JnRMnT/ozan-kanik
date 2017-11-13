@@ -52,7 +52,7 @@ app.use((err: any, req, res, next) => {
     res.sendStatus(err['status'] || 500);
 });
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 1337);
 
 configurationManager.initializeConfigurations().then(() => {
     var server = app.listen(app.get('port'), function () {

@@ -9,12 +9,12 @@
 		}	
 	],
 	"availableWebs": [
-		 {
-			"name": "Angular4",
-			"description": "Angular4 as Front-End",
-			"location": "ozan-kanik-angular4",
-			"identifier": "angular4",
-			"isDefault": true
-		}
+    {
+      "name": "Angular4",
+      "description": "Angular4 as Front-End",
+      "location": "../ozan-kanik-angular/dist/index.html",
+      "identifier": "angular4",
+      "isDefault": true
+    }
 	]
 }
