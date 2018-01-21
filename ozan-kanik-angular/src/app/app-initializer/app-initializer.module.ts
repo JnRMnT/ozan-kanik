@@ -20,7 +20,18 @@ import { CommonModule } from '@angular/common';
 export class AppInitializerModule { }
 
 export function initializeResources(httpService: HttpService, translateService: TranslateService): () => Promise<any> {
+  
   return (): Promise<any> => {
-    return translateService.initialize();
-  }
+    return new Promise((resolve, reject) => {
+      translateService.initialize().then(() => {
+        resolve();
+      }, (error) => {
+        const errorTitle = translateService.getLocalResource("Title.Error");
+        const errorMessage = translateService.getLocalResource("Exception.Common");
+        const simpleError = '<div class="custom-error alert alert-danger"><strong>' + errorTitle + '</strong> ' + errorMessage + '</div>';
+        $("app-root .loader-overlay").html(simpleError);
+        reject();
+      });
+    });
+  };
 }
