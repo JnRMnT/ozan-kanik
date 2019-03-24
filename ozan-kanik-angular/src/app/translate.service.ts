@@ -29,7 +29,7 @@ export class TranslateService {
 
         me.use();
         resolve();
-      }, () => reject());
+      }, (result) => reject(result));
     });
   }
 

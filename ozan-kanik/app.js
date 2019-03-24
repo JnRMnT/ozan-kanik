@@ -2,17 +2,27 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 // Get dependencies
 var express = require("express");
+var env = process.env.NODE_ENV || 'development';
 var path = require('path');
 var http = require('http');
 var bodyParser = require('body-parser');
-var globalConfiguration = require('../global-config.json');
+var globalConfigurationPath = "./global-config.json";
+if (env === 'development') {
+    globalConfigurationPath = "../global-config.json";
+}
+var globalConfiguration = require(globalConfigurationPath);
+var appInsights = require('applicationinsights');
 // Get our API routes
 var api = require('./routes/api');
+if (env !== 'development') {
+    appInsights.setup().start();
+}
 var app = express();
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../ozan-kanik-angular/dist')));
+app.use(express.static(path.join(__dirname, './angular')));
 // Set our api routes
 var defaultAppUrl = globalConfiguration.availableApps.find(function (app) { return app.isDefault; }).location;
 var defaultWebUrl = path.resolve(globalConfiguration.availableWebs.find(function (app) { return app.isDefault; }).location);
@@ -39,7 +49,7 @@ app.get('*', function (req, res) {
 /**
  * Get port from environment and store in Express.
  */
-var port = process.env.PORT || 1334;
+var port = process.env.PORT || 80;
 app.set('port', port);
 /**
  * Create HTTP server.

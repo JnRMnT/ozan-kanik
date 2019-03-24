@@ -27,7 +27,7 @@ class EmailManager {
         // send mail with defined transport object
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
-                deferred.reject();
+                deferred.reject(error);
             }
             deferred.resolve();
         });

@@ -30,7 +30,7 @@ export function initializeResources(httpService: HttpService, translateService: 
         const errorMessage = translateService.getLocalResource("Exception.Common");
         const simpleError = '<div class="custom-error alert alert-danger"><strong>' + errorTitle + '</strong> ' + errorMessage + '</div>';
         $("app-root .loader-overlay").html(simpleError);
-        reject();
+        reject(error);
       });
     });
   };

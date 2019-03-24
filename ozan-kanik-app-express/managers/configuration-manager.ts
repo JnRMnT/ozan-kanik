@@ -1,4 +1,4 @@
-﻿const globalConfig = require("../../global-config.json");
+﻿const globalConfig = require("../" + global.globalConfigPath);
 const dbManager = require("./db-manager");
 const cacheManager = require("./cache-manager");
 import { ConfigurationParameter } from '../models/configurationParameter';

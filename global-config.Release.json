@@ -3,7 +3,7 @@
 		{
 			"name": "ExpressJS",
 			"description": "ExpressJS as API, including Redis for caching",
-			"location": "http://localhost:1337/",
+			"location": "https://ozankanik-app.azurewebsites.net/",
 			"identifier": "expressjs",
 			"isDefault": true
 		}	
@@ -12,7 +12,7 @@
     {
       "name": "Angular5",
       "description": "Angular5 as Front-End",
-      "location": "../ozan-kanik-angular/dist/index.html",
+      "location": "./angular/index.html",
       "identifier": "angular5",
       "isDefault": true
     }

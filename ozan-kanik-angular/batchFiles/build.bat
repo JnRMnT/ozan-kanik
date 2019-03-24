@@ -1,1 +1,1 @@
-cd ../ && ng build && pause
+cd ../ && ng build

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as JM from 'jm-utilities';
+import { JM } from 'jm-utilities';
 
 @Injectable()
 export class PreferencesService {

@@ -4,6 +4,14 @@ const debug = require("debug");
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
+let appInsights = require('applicationinsights');
+var env = process.env.NODE_ENV || 'development';
+if (env === 'development') {
+    global.globalConfigPath = "../global-config.json";
+}
+else {
+    global.globalConfigPath = "./global-config.json";
+}
 const index_1 = require("./routes/index");
 const summaryInfo_1 = require("./routes/summaryInfo");
 const skills_1 = require("./routes/skills");
@@ -12,6 +20,9 @@ const projects_1 = require("./routes/projects");
 const resources_1 = require("./routes/resources");
 const contactMessage_1 = require("./routes/contactMessage");
 const configurationManager = require('./managers/configuration-manager');
+if (env !== 'development') {
+    appInsights.setup().start();
+}
 var app = express();
 // view engine setup
 app.set('view engine', 'pug');

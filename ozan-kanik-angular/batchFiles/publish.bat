@@ -1,1 +1,1 @@
-cd ../ && ng build  --prod --build-optimizer && cd ./batchFiles && copy-published-files && pause
+cd ../ && ng build  --prod --build-optimizer && copy-published-files

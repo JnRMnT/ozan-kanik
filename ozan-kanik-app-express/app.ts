@@ -1,7 +1,14 @@
 ﻿import debug = require('debug');
 import express = require('express');
 import path = require('path');
-import bodyParser = require('body-parser')
+import bodyParser = require('body-parser');
+let appInsights = require('applicationinsights');
+var env = process.env.NODE_ENV || 'development';
+if (env === 'development') {
+    global.globalConfigPath = "../global-config.json";
+} else {
+    global.globalConfigPath = "./global-config.json";
+}
 
 import routes from './routes/index';
 import summaryInfoRoutes from './routes/summaryInfo';
@@ -13,6 +20,9 @@ import contactMessageRoutes from './routes/contactMessage';
 import { ConfigurationManager } from './managers/configuration-manager';
 const configurationManager: ConfigurationManager = require('./managers/configuration-manager');
 
+if (env !== 'development') {
+    appInsights.setup().start();
+}
 var app = express();
 
 // view engine setup
