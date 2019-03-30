@@ -17,6 +17,7 @@ import workExperiencesRoutes from './routes/workExperiences';
 import projectsRoutes from './routes/projects';
 import resourcesRoutes from './routes/resources';
 import contactMessageRoutes from './routes/contactMessage';
+import maintenanceRoutes from './routes/maintenance';
 import { ConfigurationManager } from './managers/configuration-manager';
 const configurationManager: ConfigurationManager = require('./managers/configuration-manager');
 
@@ -38,6 +39,7 @@ app.use('/workExperiences', workExperiencesRoutes);
 app.use('/projects', projectsRoutes);
 app.use('/resources', resourcesRoutes);
 app.use('/contactMessage', contactMessageRoutes);
+app.use('/maintenance', maintenanceRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

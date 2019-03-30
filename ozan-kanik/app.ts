@@ -4,6 +4,7 @@ var env = process.env.NODE_ENV || 'development';
 
 const path = require('path');
 const http = require('http');
+const request = require('request');
 const bodyParser = require('body-parser');
 let globalConfigurationPath = "./global-config.json";
 if (env === 'development') {
@@ -61,6 +62,15 @@ app.set('port', port);
  * Create HTTP server.
  */
 const server = http.createServer(app);
+
+function appStatusCheck() {
+    let url = defaultAppUrl + "maintenance/statusCheck";
+    request.get(url, { json: true }, (error, response, body) => {
+        
+    });
+}
+
+setInterval(appStatusCheck, 5000);
 
 /**
  * Listen on provided port, on all network interfaces.

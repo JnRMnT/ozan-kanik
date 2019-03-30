@@ -5,7 +5,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>ozan-kanik</Name>
     <RootNamespace>ozan-kanik</RootNamespace>
-    <LastActiveSolutionConfig>Release|Any CPU</LastActiveSolutionConfig>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
     <ToolsVersionPromptShown>2.3</ToolsVersionPromptShown>
     <NameOfLastUsedPublishProfile>ozankanik-web - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>

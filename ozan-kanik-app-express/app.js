@@ -19,6 +19,7 @@ const workExperiences_1 = require("./routes/workExperiences");
 const projects_1 = require("./routes/projects");
 const resources_1 = require("./routes/resources");
 const contactMessage_1 = require("./routes/contactMessage");
+const maintenance_1 = require("./routes/maintenance");
 const configurationManager = require('./managers/configuration-manager');
 if (env !== 'development') {
     appInsights.setup().start();
@@ -35,6 +36,7 @@ app.use('/workExperiences', workExperiences_1.default);
 app.use('/projects', projects_1.default);
 app.use('/resources', resources_1.default);
 app.use('/contactMessage', contactMessage_1.default);
+app.use('/maintenance', maintenance_1.default);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');

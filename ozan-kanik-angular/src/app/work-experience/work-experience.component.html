@@ -7,9 +7,10 @@
                         <img class="img-thumbnail img-responsive" [src]="workExperience.thumbnailUrl" />
                     </div>
                     <h2>{{workExperience.company}}</h2>
+                    <h3>{{workExperience.title}}</h3>
                     <h4>{{workExperience | dateInterval}}</h4>
                 </div>
-                <p>{{workExperience.description | translate}}</p>
+                <p [innerHTML]="workExperience.description | translate"></p>
             </div>
         </div>
     </div>

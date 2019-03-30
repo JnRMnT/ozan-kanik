@@ -5,6 +5,7 @@ var express = require("express");
 var env = process.env.NODE_ENV || 'development';
 var path = require('path');
 var http = require('http');
+var request = require('request');
 var bodyParser = require('body-parser');
 var globalConfigurationPath = "./global-config.json";
 if (env === 'development') {
@@ -55,6 +56,13 @@ app.set('port', port);
  * Create HTTP server.
  */
 var server = http.createServer(app);
+function appStatusCheck() {
+    var url = defaultAppUrl + "maintenance/statusCheck";
+    console.log(url);
+    request.get(url, { json: true }, function (error, response, body) {
+    });
+}
+setInterval(appStatusCheck, 5000);
 /**
  * Listen on provided port, on all network interfaces.
  */
