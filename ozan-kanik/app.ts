@@ -63,15 +63,6 @@ app.set('port', port);
  */
 const server = http.createServer(app);
 
-function appStatusCheck() {
-    let url = defaultAppUrl + "maintenance/statusCheck";
-    request.get(url, { json: true }, (error, response, body) => {
-        
-    });
-}
-
-setInterval(appStatusCheck, 5000);
-
 /**
  * Listen on provided port, on all network interfaces.
  */
