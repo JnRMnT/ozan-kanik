@@ -6,6 +6,9 @@ function getRelativeUrl(req) {
     var url = req.appUrl + relativeUrl;
     return url;
 }
+router.get('/ping', function (req, res) {
+    res.send("pong");
+});
 router.get('*', function (req, res) {
     var url = getRelativeUrl(req);
     request.get(url, { json: true }, function (error, response, body) {

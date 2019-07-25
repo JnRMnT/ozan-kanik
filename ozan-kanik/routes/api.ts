@@ -8,6 +8,10 @@ function getRelativeUrl(req) {
     return url;
 }
 
+router.get('/ping', (req, res) => {
+    res.send("pong");
+});
+
 router.get('*', (req, res) => {
     const url = getRelativeUrl(req);
     request.get(url, { json: true }, (error, response, body) => {

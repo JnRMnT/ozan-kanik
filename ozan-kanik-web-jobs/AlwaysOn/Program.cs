@@ -14,12 +14,13 @@ namespace AlwaysOn
         {
             using (HttpClient client = new HttpClient())
             {
-                string url = "https://" + ConfigurationManager.AppSettings.Get("WEBSITE_SITE_NAME") + ".azurewebsites.net";
+                string url = "https://" + ConfigurationManager.AppSettings.Get("WEBSITE_SITE_NAME") + ".azurewebsites.net/api/ping";
                 Console.WriteLine("Getting " + url + "...");
                 Task.Run(async () =>
                 {
                     HttpResponseMessage responseMessage = await client.GetAsync(url);
                     Console.WriteLine(responseMessage.StatusCode);
+                    Console.WriteLine(await responseMessage.Content.ReadAsStringAsync());
                 }).Wait();
             }
         }
