@@ -1,0 +1,1 @@
+﻿///  <reference path="../node_modules/jm-dbprovider/Scripts/typings/jmdbprovider.d.ts"/>
