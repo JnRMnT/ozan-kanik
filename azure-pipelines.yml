@@ -21,7 +21,7 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: './ozan-kanik-app'
+    workingDir: './ozan-kanik'
 - task: CmdLine@2
   inputs:
     script: 'npm install -g @angular/cli'
