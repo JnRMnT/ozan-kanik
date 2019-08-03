@@ -14,11 +14,18 @@ steps:
   inputs:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: 'ozan-kanik-app-express'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: 'ozan-kanik-app'
+- task: CmdLine@2
+  inputs:
+    script: 'npm install -g @angular/cli'
 - task: MSBuild@1
   inputs:
     solution: '**/*.sln'
-    configuration: 'Release'    
-- script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+    configuration: 'Release' 
