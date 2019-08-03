@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'vs2017-win2016'
 
 steps:
 - task: NodeTool@0
@@ -17,11 +17,11 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: 'ozan-kanik-app-express'
+    workingDir: './ozan-kanik-app-express'
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: 'ozan-kanik-app'
+    workingDir: './ozan-kanik-app'
 - task: CmdLine@2
   inputs:
     script: 'npm install -g @angular/cli'
