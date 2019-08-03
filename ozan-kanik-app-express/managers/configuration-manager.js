@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const globalConfig = require("../" + global.globalConfigPath);
+const globalAny = global;
+const globalConfig = require("../" + globalAny.globalConfigPath);
 const dbManager = require("./db-manager");
 const cacheManager = require("./cache-manager");
 const q = require("q");

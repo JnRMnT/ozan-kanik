@@ -2,12 +2,13 @@
 import express = require('express');
 import path = require('path');
 import bodyParser = require('body-parser');
+const globalAny: any = global;
 let appInsights = require('applicationinsights');
 var env = process.env.NODE_ENV || 'development';
 if (env === 'development') {
-    global.globalConfigPath = "../global-config.json";
+    globalAny.globalConfigPath = "../global-config.json";
 } else {
-    global.globalConfigPath = "./global-config.json";
+    globalAny.globalConfigPath = "./global-config.json";
 }
 
 import routes from './routes/index';

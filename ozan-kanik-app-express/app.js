@@ -4,13 +4,14 @@ const debug = require("debug");
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
+const globalAny = global;
 let appInsights = require('applicationinsights');
 var env = process.env.NODE_ENV || 'development';
 if (env === 'development') {
-    global.globalConfigPath = "../global-config.json";
+    globalAny.globalConfigPath = "../global-config.json";
 }
 else {
-    global.globalConfigPath = "./global-config.json";
+    globalAny.globalConfigPath = "./global-config.json";
 }
 const index_1 = require("./routes/index");
 const summaryInfo_1 = require("./routes/summaryInfo");

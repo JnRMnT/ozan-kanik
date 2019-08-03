@@ -1,6 +1,6 @@
 {
   "name": "ozan-kanik-app-express",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "start": "node app",
@@ -13,24 +13,21 @@
   "main": "app.js",
   "dependencies": {
     "@types/q": "^1.5.2",
-    "applicationinsights": "^1.2.0",
+    "applicationinsights": "^1.4.0",
     "debug": "^2.2.0",
-    "express": "^4.16.4",
-    "jm-dbprovider": "^1.0.8",
-    "jm-utilities": "^1.1.2",
+    "express": "^4.17.1",
+    "jm-dbprovider": "^1.0.10",
+    "jm-utilities": "^1.1.4",
     "lodash": "^4.17.15",
     "lodash.isarray": "^4.0.0",
     "lodash.pick": "^4.4.0",
     "mocha": "^4.1.0",
-    "node-cache-redis": "^2.6.0",
+    "node-cache-redis": "^2.9.0",
     "nodemailer": "^4.7.0",
-    "pug": "^2.0.3",
+    "pug": "^2.0.4",
     "q": "^1.5.1"
   },
-  "devDependencies": {
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^12.6.9"
-  },
+  "devDependencies": {},
   "engines": {
     "node": "10.14.1"
   }
