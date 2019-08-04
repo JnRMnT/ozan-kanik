@@ -1,7 +1,5 @@
-# Node.js
-# Build a general Node.js project with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+# Build Definition
+# Build the complete solution and get ready for deployment
 
 trigger:
 - master
@@ -25,6 +23,11 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'npm install -g @angular/cli'
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
 - task: MSBuild@1
   inputs:
     solution: '**/*.sln'
