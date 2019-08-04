@@ -51,13 +51,13 @@ steps:
   displayName: 'Build and Deploy Locally Web Layer'
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'System.DefaultWorkingDirectory/ozan-kanik-app-express/bin/Release/Publish'
+    SourceFolder: 'ozan-kanik-app-express/bin/Release/Publish'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/app'
   displayName: 'Add App Release Files to Artifacts'
 - task: CopyFiles@2
   inputs:
-    SourceFolder: 'System.DefaultWorkingDirectory/ozan-kanik/bin/Release/Publish'
+    SourceFolder: 'ozan-kanik/bin/Release/Publish'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/web'
   displayName: 'Add Web Release Files to Artifacts'
