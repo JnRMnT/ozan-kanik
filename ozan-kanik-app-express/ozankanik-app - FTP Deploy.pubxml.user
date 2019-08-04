@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Bu dosya, Web projenizin yayımlama/paket işlemi tarafından kullanılıyor. MSBuild dosyasını düzenleyerek
+bu işlemin davranışını düzenleyebilirsiniz. Bununla ilgili daha fazla bilgi edinmek için https://go.microsoft.com/fwlink/?LinkID=208121 adresini ziyaret edin. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALuPFBAUV3Eqe6FN4IviCaQAAAAACAAAAAAAQZgAAAAEAACAAAAC7VECU6EcJFxaMONhZBEJ9zTXhfWVUyUWjtPawuJgbcQAAAAAOgAAAAAIAACAAAACW8lMeylkSL6/uEvqFwhs9zUGjF/OEl1yb7kbJu3iD+CAAAADacsJlI/dx9jrRXKKCL4GMnuKtIGwA3Fo2e+T0p+AGLUAAAADMMVja/p0OCIJtPMdLqz81rxHwaGg2n+d5qDf4G7ED+SYxd7OIvrZPBys93R5eJKtJ70p/dFRjF3+AMPjwcyro</EncryptedPassword>
+    <_PublishTargetUrl>ftps://164.68.112.74/ozan-kanik-app</_PublishTargetUrl>
+  </PropertyGroup>
+</Project>

@@ -38,6 +38,8 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="ozankanik-app - FTP Deploy.pubxml" />
+    <None Include="ozankanik-app - Local Deploy.pubxml" />
     <Content Include="Web.config" />
     <None Include="Web.Debug.config" />
     <None Include="ozankanik-app - Web Deploy.pubxml" />
