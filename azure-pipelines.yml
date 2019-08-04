@@ -49,3 +49,9 @@ steps:
     configuration: 'Release' 
     msbuildArguments: /p:DeployOnBuild=true /p:PublishProfile="ozankanik-web - Local Deploy.pubxml" /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"''
   displayName: 'Build and Deploy Locally Web Layer'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+  displayName: 'Publish Artifacts'
