@@ -25,7 +25,7 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'npm install -g @angular/cli'
-  displayName: 'Install angular Client'
+  displayName: 'Install Angular Client Globally'
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
@@ -36,11 +36,11 @@ steps:
   inputs:
     solution: '**/ozan-kanik-app-express.sln'
     configuration: 'Release' 
-    msbuildArguments: /p:DeployOnBuild=true /p:PublishProfile="ozankanik-app - Local Deploy" /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"''
+    msbuildArguments: /p:DeployOnBuild=true /p:PublishProfile="ozankanik-app - Local Deploy.pubxml" /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"''
   displayName: 'Build and Deploy Locally App Layer'
 - task: MSBuild@1
   inputs:
     solution: '**/ozan-kanik.sln'
     configuration: 'Release' 
-    msbuildArguments: /p:DeployOnBuild=true /p:PublishProfile="ozankanik-web - Local Deploy" /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"''
+    msbuildArguments: /p:DeployOnBuild=true /p:PublishProfile="ozankanik-web - Local Deploy.pubxml" /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"''
   displayName: 'Build and Deploy Locally Web Layer'
