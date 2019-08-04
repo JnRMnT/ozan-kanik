@@ -16,19 +16,31 @@ steps:
   inputs:
     command: 'install'
     workingDir: './ozan-kanik-app-express'
+  displayName: 'Install NPM Packages for App'
 - task: Npm@1
   inputs:
     command: 'install'
     workingDir: './ozan-kanik'
+  displayName: 'Install NPM Packages for Web'
 - task: CmdLine@2
   inputs:
     script: 'npm install -g @angular/cli'
+  displayName: 'Install angular Client'
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
     restoreSolution: '**/*.sln'
     feedsToUse: 'select'
+  displayName: 'Restore Nuget Packages'
 - task: MSBuild@1
   inputs:
-    solution: '**/*.sln'
+    solution: '**/ozan-kanik-app-express.sln'
     configuration: 'Release' 
+    msbuildArguments: /p:DeployOnBuild=true /p:PublishProfile="ozankanik-app - Local Deploy" /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"''
+  displayName: 'Build and Deploy Locally App Layer'
+- task: MSBuild@1
+  inputs:
+    solution: '**/ozan-kanik.sln'
+    configuration: 'Release' 
+    msbuildArguments: /p:DeployOnBuild=true /p:PublishProfile="ozankanik-web - Local Deploy" /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"''
+  displayName: 'Build and Deploy Locally Web Layer'
