@@ -9,8 +9,209 @@ bu işlemin davranışını düzenleyebilirsiniz. Bununla ilgili daha fazla bilg
     <_PublishTargetUrl>F:\Genel\Projeler\ozan-kanik\ozan-kanik\bin\Release\Publish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="angular/0.256fccca4b0ceb755463.chunk.js">
+      <publishTime>01/21/2018 12:16:48</publishTime>
+    </File>
+    <File Include="angular/0.54f9979234ceda94acd8.chunk.js">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/3rdpartylicenses.txt">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/akbank.jpg">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/alfamars.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/ambushtd.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/assaultchopper.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/eal.jpg">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/fiba.jpg">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/halkbank.jpg">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/jm.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/kizilay.jpg">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/me.jpg">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/nn.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/savronik.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/spades.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/tetra.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/UAB.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/veripark.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/vrcubes.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/yildiz.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/ykb.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/assets/images/ziraat.png">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/favicon.ico">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/fontawesome-webfont.674f50d287a8c48dc19b.eot">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/fontawesome-webfont.912ec66d7572ff821749.svg">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/fontawesome-webfont.af7ae505a9eed503f8b8.woff2">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/fontawesome-webfont.b06871f281fee6b241d6.ttf">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/fontawesome-webfont.fee66e712a8a08eef580.woff">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/global-config.json.chunk.js">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/global-config.json.chunk.js.map">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/global-config.Release.json">
+      <publishTime>03/24/2019 15:49:00</publishTime>
+    </File>
+    <File Include="angular/glyphicons-halflings-regular.448c34a56d699c29117a.woff2">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/glyphicons-halflings-regular.89889688147bd7575d63.svg">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/glyphicons-halflings-regular.e18bbf611f2a2e43afc0.ttf">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/glyphicons-halflings-regular.f4769f9bdb7466be6508.eot">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/glyphicons-halflings-regular.fa2772327f55d8198301.woff">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/index.html">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/inline.6e315c10660928f411f8.bundle.js">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/inline.bundle.js">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/inline.bundle.js.map">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/inline.d004111acfe81dd558ef.bundle.js">
+      <publishTime>01/21/2018 12:16:48</publishTime>
+    </File>
+    <File Include="angular/main.15067716c0f3ff3d698d.bundle.js">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/main.94135d73d71438c1424b.bundle.js">
+      <publishTime>03/24/2019 16:58:33</publishTime>
+    </File>
+    <File Include="angular/main.a3aab667a861bae7d728.bundle.js">
+      <publishTime>03/24/2019 16:34:22</publishTime>
+    </File>
+    <File Include="angular/main.ad98cfe92528f157e36c.bundle.js">
+      <publishTime>03/24/2019 16:40:18</publishTime>
+    </File>
+    <File Include="angular/main.bd689130fd56a7188a13.bundle.js">
+      <publishTime>03/24/2019 16:27:35</publishTime>
+    </File>
+    <File Include="angular/main.bundle.js">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/main.bundle.js.map">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/main.f393d34b3a6fad74353b.bundle.js">
+      <publishTime>01/21/2018 12:16:48</publishTime>
+    </File>
+    <File Include="angular/polyfills.0142cec5db8a90b60742.bundle.js">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/polyfills.63a5fb47af41fbafb2ba.bundle.js">
+      <publishTime>01/21/2018 12:16:48</publishTime>
+    </File>
+    <File Include="angular/polyfills.bundle.js">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/polyfills.bundle.js.map">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/scripts.235dc6992623a7a090d5.bundle.js">
+      <publishTime>01/21/2018 12:16:48</publishTime>
+    </File>
+    <File Include="angular/scripts.92433f57ed692c8b7f76.bundle.js">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/scripts.bundle.js">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/scripts.bundle.js.map">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/scripts.e81cf39913414e39468e.bundle.js">
+      <publishTime>07/25/2019 22:02:01</publishTime>
+    </File>
+    <File Include="angular/styles.b3992c2bdc6980185189.bundle.css">
+      <publishTime>01/21/2018 12:16:48</publishTime>
+    </File>
+    <File Include="angular/styles.bundle.js">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/styles.bundle.js.map">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/styles.e4af7804fc2a3ad0fe44.bundle.css">
+      <publishTime>07/25/2019 22:02:01</publishTime>
+    </File>
+    <File Include="angular/styles.fa4dae199285819af80e.bundle.css">
+      <publishTime>08/04/2019 17:06:57</publishTime>
+    </File>
+    <File Include="angular/vendor.bundle.js">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
+    <File Include="angular/vendor.bundle.js.map">
+      <publishTime>08/03/2019 19:45:05</publishTime>
+    </File>
     <File Include="bin/Microsoft.NodejsTools.WebRole.dll">
       <publishTime>04/19/2019 23:38:26</publishTime>
+    </File>
+    <File Include="global-config.json">
+      <publishTime>03/24/2019 15:49:00</publishTime>
     </File>
     <File Include="node_modules/%40types/babel-types/index.d.ts">
       <publishTime>04/24/2019 19:31:13</publishTime>
