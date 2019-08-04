@@ -22,6 +22,11 @@ steps:
     command: 'install'
     workingDir: './ozan-kanik'
   displayName: 'Install NPM Packages for Web'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: './ozan-kanik-angular'
+  displayName: 'Install NPM Packages for Angular Project'
 - task: CmdLine@2
   inputs:
     script: 'npm install -g @angular/cli@^1.7.4'
