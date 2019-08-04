@@ -1,5 +1,4 @@
-﻿/// <reference path="../typings/index.d.ts" />
-import assert = require('assert');
+﻿import assert = require('assert');
 let jmdbProvider: JMDBProvider = require('jm-dbprovider');
 const configuration = require('../config');
 import { SummaryInfo, TestSummaryInfoContent } from "../models/summaryInfo";

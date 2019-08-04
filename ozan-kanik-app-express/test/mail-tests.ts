@@ -1,5 +1,4 @@
-﻿/// <reference path="../typings/index.d.ts" />
-import assert = require('assert');
+﻿import assert = require('assert');
 import { ConfigurationManager } from '../managers/configuration-manager';
 import { EmailManager } from '../managers/email-manager';
 const configurationManager: ConfigurationManager = require('../managers/configuration-manager');

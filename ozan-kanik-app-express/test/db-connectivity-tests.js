@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/// <reference path="../typings/index.d.ts" />
 const assert = require("assert");
 let jmdbProvider = require('jm-dbprovider');
 const configuration = require('../config');

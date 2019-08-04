@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const globalAny = global;
 const globalConfig = require("../" + globalAny.globalConfigPath);
+require("jm-dbprovider");
 const dbManager = require("./db-manager");
 const cacheManager = require("./cache-manager");
 const q = require("q");
@@ -10,7 +11,7 @@ class ConfigurationManager {
         let deferred = q.defer();
         dbManager.getDBProvider().then((jmdbProvider) => {
             jmdbProvider.find(("configurationParameters")).then((configurationParameters) => {
-                global.configurationParameters = configurationParameters;
+                globalAny.configurationParameters = configurationParameters;
                 cacheManager.set("configurationParameters", configurationParameters);
                 deferred.resolve(configurationParameters);
             }, (error) => { deferred.reject(error); });
@@ -20,18 +21,18 @@ class ConfigurationManager {
     ;
     getConfigurations() {
         const me = this;
-        if (global.configurationParameters) {
-            return global.configurationParameters;
+        if (globalAny.configurationParameters) {
+            return globalAny.configurationParameters;
         }
         else {
             cacheManager.get("configurationParameters").then((configurationParameters) => {
                 if (configurationParameters) {
-                    global.configurationParameters = configurationParameters;
+                    globalAny.configurationParameters = configurationParameters;
                 }
                 else {
                     me.initializeConfigurations().then((configurationParameters) => {
                         cacheManager.set("configurationParameters", configurationParameters);
-                        global.configurationParameters = configurationParameters;
+                        globalAny.configurationParameters = configurationParameters;
                     });
                 }
             });

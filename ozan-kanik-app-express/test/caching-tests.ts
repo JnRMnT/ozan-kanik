@@ -1,5 +1,4 @@
-﻿/// <reference path="../typings/index.d.ts" />
-import assert = require('assert');
+﻿import assert = require('assert');
 const cacheManager = require("../managers/cache-manager");
 
 describe("Caching Tests", () => {

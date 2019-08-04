@@ -1,5 +1,6 @@
 ﻿const globalAny: any = global;
 const globalConfig = require("../" + globalAny.globalConfigPath);
+import "jm-dbprovider";
 const dbManager = require("./db-manager");
 const cacheManager = require("./cache-manager");
 import { ConfigurationParameter } from '../models/configurationParameter';
@@ -10,7 +11,7 @@ export class ConfigurationManager {
         let deferred = q.defer<ConfigurationParameter[]>();
         dbManager.getDBProvider().then((jmdbProvider: JMDBProvider) => {
             jmdbProvider.find<ConfigurationParameter>(("configurationParameters")).then((configurationParameters) => {
-                global.configurationParameters = configurationParameters;
+                globalAny.configurationParameters = configurationParameters;
                 cacheManager.set("configurationParameters", configurationParameters);
                 deferred.resolve(configurationParameters);
             }, (error) => { deferred.reject(error); });
@@ -19,16 +20,16 @@ export class ConfigurationManager {
     };
     public getConfigurations(): ConfigurationParameter[] {
         const me = this;
-        if (global.configurationParameters) {
-            return global.configurationParameters;
+        if (globalAny.configurationParameters) {
+            return globalAny.configurationParameters;
         } else {
-            cacheManager.get("configurationParameters").then((configurationParameters: ConfigurationParameter[]) =>{
+            cacheManager.get("configurationParameters").then((configurationParameters: ConfigurationParameter[]) => {
                 if (configurationParameters) {
-                    global.configurationParameters = configurationParameters;
+                    globalAny.configurationParameters = configurationParameters;
                 } else {
                     me.initializeConfigurations().then((configurationParameters: ConfigurationParameter[]) => {
                         cacheManager.set("configurationParameters", configurationParameters);
-                        global.configurationParameters = configurationParameters;
+                        globalAny.configurationParameters = configurationParameters;
                     });
                 }
             });

@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/// <reference path="../typings/index.d.ts" />
 const assert = require("assert");
 const configurationManager = require('../managers/configuration-manager');
 const emailManager = require('../managers/email-manager');

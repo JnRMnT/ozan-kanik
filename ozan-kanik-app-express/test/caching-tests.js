@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/// <reference path="../typings/index.d.ts" />
 const assert = require("assert");
 const cacheManager = require("../managers/cache-manager");
 describe("Caching Tests", () => {
