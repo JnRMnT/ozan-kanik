@@ -116,9 +116,6 @@
     <TypeScriptCompile Include="typings\globals\serve-static\index.d.ts" />
     <Content Include="config.json" />
     <Content Include="package.json" />
-    <TypeScriptCompile Include="typings\index.d.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="managers\" />
