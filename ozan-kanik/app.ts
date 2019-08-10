@@ -18,7 +18,7 @@ let appInsights = require('applicationinsights');
 const api = require('./routes/api');
 
 if (env !== 'development') {
-    appInsights.setup().start();
+    appInsights.setup(globalConfiguration.webInstrumentationKey).start();
 }
 const app = express();
 

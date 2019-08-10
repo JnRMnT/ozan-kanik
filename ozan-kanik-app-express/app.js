@@ -22,8 +22,9 @@ const resources_1 = require("./routes/resources");
 const contactMessage_1 = require("./routes/contactMessage");
 const maintenance_1 = require("./routes/maintenance");
 const configurationManager = require('./managers/configuration-manager');
+const globalConfig = require(globalAny.globalConfigPath);
 if (env !== 'development') {
-    appInsights.setup().start();
+    appInsights.setup(globalConfig.appInstrumentationKey).start();
 }
 var app = express();
 // view engine setup

@@ -22,8 +22,9 @@ import maintenanceRoutes from './routes/maintenance';
 import { ConfigurationManager } from './managers/configuration-manager';
 const configurationManager: ConfigurationManager = require('./managers/configuration-manager');
 
+const globalConfig = require(globalAny.globalConfigPath);
 if (env !== 'development') {
-    appInsights.setup().start();
+    appInsights.setup(globalConfig.appInstrumentationKey).start();
 }
 var app = express();
 

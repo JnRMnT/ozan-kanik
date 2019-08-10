@@ -3,18 +3,20 @@
 		{
 			"name": "ExpressJS",
 			"description": "ExpressJS as API, including Redis for caching",
-			"location": "https://ozankanik-app.azurewebsites.net/",
+			"location": "http://127.0.0.1:3037/",
 			"identifier": "expressjs",
 			"isDefault": true
 		}	
 	],
 	"availableWebs": [
-    {
-      "name": "Angular5",
-      "description": "Angular5 as Front-End",
-      "location": "./angular/index.html",
-      "identifier": "angular5",
-      "isDefault": true
-    }
-	]
+		{
+		  "name": "Angular5",
+		  "description": "Angular5 as Front-End",
+		  "location": "./angular/index.html",
+		  "identifier": "angular5",
+		  "isDefault": true
+		}
+	],
+	"appInstrumentationKey" : "034fa23f-0374-45e1-9a47-bed9265d4c96",
+	"webInstrumentationKey" : "c9a6df52-c235-4e71-a5ab-623e5a4854fb"
 }

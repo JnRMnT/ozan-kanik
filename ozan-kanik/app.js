@@ -16,7 +16,7 @@ var appInsights = require('applicationinsights');
 // Get our API routes
 var api = require('./routes/api');
 if (env !== 'development') {
-    appInsights.setup().start();
+    appInsights.setup(globalConfiguration.webInstrumentationKey).start();
 }
 var app = express();
 // Parsers for POST data
