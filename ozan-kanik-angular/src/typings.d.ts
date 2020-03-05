@@ -13,4 +13,4 @@ declare class AvailableProject {
   public identifier: string;
   public isDefault: boolean;
 }
-declare var System: any;   
+declare var System: any;

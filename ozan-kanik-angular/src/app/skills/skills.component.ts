@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Skill } from './skill';
 import { HttpService } from '../http.service';
 import $ from "jquery";
+import tooltip from "bootstrap";
 
 @Component({
   selector: 'app-skills',
@@ -20,7 +21,7 @@ export class SkillsComponent implements OnInit {
       me.groupCategories();
       me.indexCounter = 0;
       setTimeout(() => {
-        (<any>$("span[title],a[title]")).tooltip();
+        $("span[title],a[title]").tooltip();
       });
     });
   }

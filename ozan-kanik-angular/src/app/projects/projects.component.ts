@@ -1,3 +1,4 @@
+/// <reference path="../../../node_modules/@types/jquery.slimscroll/index.d.ts" />
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Project } from './project';
 import moment from 'moment';
@@ -34,11 +35,11 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       $("#projects .thumbnail .caption").each((index, projectWrapper) => {
         if ($(window).width() > 960) {
-          (<any>$(projectWrapper)).slimScroll({
+          $(projectWrapper).slimScroll({
             height: '250px'
           });
         } else {
-          (<any>$(projectWrapper)).slimScroll({ destroy: true });
+          $(projectWrapper).slimScroll({ destroy: true });
         }
       });
     });
@@ -66,5 +67,4 @@ export class ProjectsComponent implements OnInit, AfterViewInit {
 
   public projects: Project[];
   private categories: string[];
-  private activeCategory: string = "-1";
 }
