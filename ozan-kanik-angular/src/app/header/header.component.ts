@@ -1,5 +1,6 @@
 import { Component, Output, OnInit, AfterViewInit, EventEmitter } from '@angular/core';
 import { TranslateService } from '../translate.service';
+import $ from "jquery";
 
 @Component({
   selector: 'app-header',

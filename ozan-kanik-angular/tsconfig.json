@@ -18,6 +18,12 @@
       "es2017",
       "dom"
     ],
-    "baseUrl": "./"
-  }
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "types": ["node"]
+  },
+  "exclude": [
+    "**/node_modules**/"
+  ]
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EducationInfo } from './education-info';
 import { EducationInfoContent } from '../response-models/educationInfo';
 import { HttpService } from '../http.service';
-import * as moment from 'moment';
+import moment from 'moment';
 
 @Component({
   selector: 'app-education',

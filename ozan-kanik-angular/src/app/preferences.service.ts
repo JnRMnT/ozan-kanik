@@ -1,3 +1,4 @@
+/// <reference path="../typings.d.ts" />
 import { Injectable } from '@angular/core';
 import { JM } from 'jm-utilities';
 
@@ -5,7 +6,7 @@ import { JM } from 'jm-utilities';
 export class PreferencesService {
   constructor() {
     const me = this;
-    System.import('../../../global-config.json').then((config) => {
+    import('../../../global-config.json').then((config) => {
       me.globalConfig = config;
       me.initializePreferences();
     });

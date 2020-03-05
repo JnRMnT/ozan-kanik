@@ -1,4 +1,4 @@
-import * as $ from 'jquery';
+import { ToastrModule } from 'ngx-toastr';
 import { LoadingModule } from 'ngx-loading';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +21,6 @@ import { SkillsComponent } from './skills/skills.component';
 import { SummaryBioComponent } from './summary-bio/summary-bio.component';
 import { DateIntervalPipe } from './date-interval.pipe';
 import { CategoryFilterPipe } from './projects/category-filter.pipe';
-import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MailtoPipe } from './mailto.pipe';
 import { TranslatePipe } from './translate.pipe';
@@ -43,21 +42,18 @@ import { TranslatePipe } from './translate.pipe';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
     LoadingModule.forRoot({
       fullScreenBackdrop: true
     }),
-    FormsModule,
-    ReactiveFormsModule,
-    ToastModule.forRoot(),
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     AppInitializerModule
   ],
   providers: [HttpService, PreferencesService, LoadingService, TranslateService],
-  bootstrap: [AppComponent],
-  schemas: [
-    HeaderComponent
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

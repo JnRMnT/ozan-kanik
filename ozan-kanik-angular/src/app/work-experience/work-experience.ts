@@ -1,4 +1,4 @@
-export class WorkExperience{
+export class WorkExperience {
     beginDate: Date;
     endDate?: Date;
     company: string;

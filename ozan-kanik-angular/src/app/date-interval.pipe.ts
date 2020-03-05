@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { WorkExperience } from './work-experience/work-experience';
 import { Project } from './projects/project';
 import { EducationInfo } from './education/education-info'
-import * as moment from 'moment';
+import moment from 'moment';
 
 @Pipe({
   name: 'dateInterval'

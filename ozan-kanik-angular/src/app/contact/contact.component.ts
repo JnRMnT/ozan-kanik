@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactInfo } from './contact-info';
-import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { ToastrService } from 'ngx-toastr';
 import { HttpService } from '../http.service';
 import { TranslateService } from '../translate.service';
 
@@ -11,7 +11,7 @@ import { TranslateService } from '../translate.service';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private httpService: HttpService, private toastsManager: ToastsManager, private translateService: TranslateService) {
+  constructor(private httpService: HttpService, private toastsManager: ToastrService, private translateService: TranslateService) {
     this.contactInfo = new ContactInfo();
   }
 

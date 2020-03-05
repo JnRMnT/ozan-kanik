@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Project } from './project';
-import * as moment from 'moment';
+import moment from 'moment';
+import $ from "jquery";
 import { HttpService } from '../http.service';
 
 @Component({

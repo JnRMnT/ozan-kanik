@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as moment from 'moment';
+import moment from 'moment';
 import { BioSummaryInfo } from '../response-models/bioSummaryInfo';
 import { HttpService } from '../http.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
