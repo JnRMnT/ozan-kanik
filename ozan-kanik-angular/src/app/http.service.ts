@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PreferencesService } from './preferences.service';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { LoadingService } from './loading.service';
 
 @Injectable()
