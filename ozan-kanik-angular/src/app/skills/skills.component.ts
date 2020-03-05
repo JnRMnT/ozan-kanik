@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Skill } from './skill';
 import { HttpService } from '../http.service';
-import $ from "jquery";
-import tooltip from "bootstrap";
 
 @Component({
   selector: 'app-skills',

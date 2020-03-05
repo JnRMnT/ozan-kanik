@@ -1,3 +1,5 @@
+/// <reference path="../node_modules/@types/jquery.slimscroll/index.d.ts" />
+/// <reference path="../node_modules/@types/bootstrap/index.d.ts" />
 /* SystemJS module definition */
 declare var module: NodeModule;
 interface NodeModule {

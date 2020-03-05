@@ -1,8 +1,6 @@
-/// <reference path="../../../node_modules/@types/jquery.slimscroll/index.d.ts" />
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Project } from './project';
 import moment from 'moment';
-import $ from "jquery";
 import { HttpService } from '../http.service';
 
 @Component({
