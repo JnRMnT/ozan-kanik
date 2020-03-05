@@ -29,7 +29,7 @@ steps:
   displayName: 'Install NPM Packages for Angular Project'
 - task: CmdLine@2
   inputs:
-    script: 'npm install -g @angular/cli@^1.7.4'
+    script: 'npm install -g @angular/cli'
   displayName: 'Install Angular Client Globally'
 - task: NuGetCommand@2
   inputs:
