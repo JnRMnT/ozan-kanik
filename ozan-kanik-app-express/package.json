@@ -16,7 +16,7 @@
     "applicationinsights": "^1.8.5",
     "debug": "^2.2.0",
     "express": "^4.17.1",
-    "jm-dbprovider": "^1.2.1",
+    "jm-dbprovider": "^1.2.2",
     "jm-utilities": "^1.1.8",
     "lodash": "^4.17.20",
     "lodash.isarray": "^4.0.0",
