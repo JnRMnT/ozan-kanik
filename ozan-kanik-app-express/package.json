@@ -12,13 +12,13 @@
   },
   "main": "app.js",
   "dependencies": {
-    "@types/q": "^1.5.2",
-    "applicationinsights": "^1.7.3",
+    "@types/q": "^1.5.4",
+    "applicationinsights": "^1.8.5",
     "debug": "^2.2.0",
     "express": "^4.17.1",
-    "jm-dbprovider": "^1.1.1",
+    "jm-dbprovider": "^1.2.1",
     "jm-utilities": "^1.1.8",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "lodash.isarray": "^4.0.0",
     "lodash.pick": "^4.4.0",
     "mocha": "^4.1.0",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@types/mocha": "^5.2.7",
-    "@types/node": "^12.12.29",
+    "@types/node": "^12.12.54",
     "diff": "^4.0.2"
   },
   "engines": {
