@@ -21,7 +21,7 @@ export class AppInitializerModule { }
 
 export function initializeResources(httpService: HttpService, translateService: TranslateService): () => Promise<any> {
   
-  return (): Promise<any> => {
+  return (): Promise<void> => {
     return new Promise((resolve, reject) => {
       translateService.initialize().then(() => {
         resolve();
