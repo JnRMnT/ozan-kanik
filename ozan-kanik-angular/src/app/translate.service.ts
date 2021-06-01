@@ -18,7 +18,7 @@ export class TranslateService {
   constructor(private httpService: HttpService) {
   }
 
-  public initialize(): Promise<any> {
+  public initialize(): Promise<void> {
     const me = this;
     return new Promise((resolve, reject) => {
       me.use();

@@ -57,9 +57,9 @@ export class PreferencesService {
   getSelectedWebIdentifier(): string {
     return this.selectedWeb.identifier;
   }
-  whenReady(): Promise<any> {
+  whenReady(): Promise<void> {
     const me = this;
-    const promise = new Promise((resolve, reject) => {
+    const promise = new Promise<void>((resolve, reject) => {
       JM.waitFor(() => { return me.globalConfig != undefined; })
         .then(() => {
           resolve();
