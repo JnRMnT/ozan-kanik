@@ -1,1 +1,1 @@
-cd && cd ../ && cd && ng build --configuration production --build-optimizer && copy-published-files
+cd && cd ../ && cd && ng build --configuration production --build-optimizer && cd ./batchFiles && copy-published-files
