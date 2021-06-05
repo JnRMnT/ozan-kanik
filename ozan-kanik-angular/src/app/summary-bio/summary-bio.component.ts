@@ -23,7 +23,9 @@ export class SummaryBioComponent implements OnInit {
       me.bioSummaryInfo = response;
       setTimeout(() => {
         me.initializePhoneNumber();
-        (<any>$("a[title]")).tooltip();
+        (<any>$("a[title]")).tooltip({
+          container: "body"
+        });
       });
     });
   }

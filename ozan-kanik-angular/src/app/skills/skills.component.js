@@ -18,7 +18,9 @@ var SkillsComponent = (function () {
             me.groupCategories();
             me.indexCounter = 0;
             setTimeout(function () {
-                $("span[title],a[title]").tooltip();
+                $("span[title],a[title]").tooltip({
+                    container: "body"
+                });
             });
         });
     };

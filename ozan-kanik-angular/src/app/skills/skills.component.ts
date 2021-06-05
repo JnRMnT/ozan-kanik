@@ -19,7 +19,9 @@ export class SkillsComponent implements OnInit {
       me.groupCategories();
       me.indexCounter = 0;
       setTimeout(() => {
-        $("span[title],a[title]").tooltip();
+        $("span[title],a[title]").tooltip({
+          container: "body"
+      });
       });
     });
   }

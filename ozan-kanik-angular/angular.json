@@ -35,7 +35,6 @@
               "node_modules/moment/min/moment.min.js",
               "node_modules/systemjs/dist/system-production.js",
               "node_modules/lodash/lodash.min.js",
-              "node_modules/q/q.js",
               "node_modules/jquery-slimscroll/jquery.slimscroll.min.js"
             ],
             "vendorChunk": true,
@@ -101,7 +100,6 @@
               "node_modules/moment/min/moment.min.js",
               "node_modules/systemjs/dist/system-production.js",
               "node_modules/lodash/lodash.min.js",
-              "node_modules/q/q.js",
               "node_modules/jquery-slimscroll/jquery.slimscroll.min.js"
             ],
             "styles": [

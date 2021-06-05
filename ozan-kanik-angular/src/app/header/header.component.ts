@@ -17,7 +17,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    $(".lang-selection a").tooltip();
+    $(".lang-selection a").tooltip({
+      container: "body"
+  });
   }
 
   public changeLanguage(cultureCode: string) {

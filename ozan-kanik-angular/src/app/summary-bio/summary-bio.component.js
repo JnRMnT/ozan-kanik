@@ -22,7 +22,9 @@ var SummaryBioComponent = (function () {
             me.bioSummaryInfo = response;
             setTimeout(function () {
                 me.initializePhoneNumber();
-                $("a[title]").tooltip();
+                $("a[title]").tooltip({
+                    container: "body"
+                });
             });
         });
     };

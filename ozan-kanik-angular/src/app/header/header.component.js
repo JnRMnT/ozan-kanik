@@ -16,7 +16,9 @@ var HeaderComponent = (function () {
         new SmoothScroll('.smooth');
     };
     HeaderComponent.prototype.ngAfterViewInit = function () {
-        $(".lang-selection a").tooltip();
+        $(".lang-selection a").tooltip({
+            container: "body"
+        });
     };
     HeaderComponent.prototype.changeLanguage = function (cultureCode) {
         var me = this;
