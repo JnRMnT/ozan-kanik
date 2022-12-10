@@ -15,7 +15,7 @@
     "@types/q": "^1.5.4",
     "applicationinsights": "^1.8.10",
     "debug": "^2.2.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jm-dbprovider": "^1.2.2",
     "jm-utilities": "^1.1.8",
     "lodash": "^4.17.21",
