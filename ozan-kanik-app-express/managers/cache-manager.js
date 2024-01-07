@@ -1,17 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CacheManager = void 0;
 var config = require("../config.json");
-const RedisCache = require("node-cache-redis");
-const cache = new RedisCache({
-    "redisOptions": config.redisConfiguration
-});
 class CacheManager {
+    constructor() {
+        this.cache = {};
+    }
     get(key) {
-        return cache.get(key);
+        return this.cache[key];
     }
     ;
     set(key, value) {
-        return cache.set(key, value);
+        return this.cache[key] = value;
     }
     ;
 }
