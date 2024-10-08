@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.EmailManager = void 0;
 const configurationManager = require('../managers/configuration-manager');
 const nodemailer = require('nodemailer');
 const q = require("q");

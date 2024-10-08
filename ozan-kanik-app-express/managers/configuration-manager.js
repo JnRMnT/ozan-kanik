@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ConfigurationManager = void 0;
 const globalAny = global;
 const globalConfig = require("../" + globalAny.globalConfigPath);
 require("jm-dbprovider");

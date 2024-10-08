@@ -1,8 +1,12 @@
 ﻿var config = require("../config.json");
-var jmdb: JMDBProvider = require("jm-dbprovider");
+var jmdb: JMDBProvider;
+
 import q = require("q");
 
-module.exports.getDBProvider = (): Q.IPromise<JMDBProvider> => {
+module.exports.getDBProvider = async (): Promise<JMDBProvider> => {
+    if (!jmdb) {
+        jmdb = await import("jm-dbprovider") as any;
+    }
     var deferred = q.defer<JMDBProvider>();
     jmdb.connect(config.databaseConfiguration.userName,
         config.databaseConfiguration.password,

@@ -1,1 +1,1 @@
-{"version":3,"file":"educationInfo.js","sourceRoot":"","sources":["educationInfo.ts"],"names":[],"mappings":";;AAEA,MAAa,aAAa;CASzB;AATD,sCASC;AAED,MAAa,2BAA2B;IAAxC;QACW,SAAI,GAAW,WAAW,CAAC;IAEtC,CAAC;CAAA;AAHD,kEAGC;AAGD,MAAM,CAAC,OAAO,GAAG,IAAI,aAAa,EAAE,CAAC"}
+{"version":3,"file":"educationInfo.js","sourceRoot":"","sources":["educationInfo.ts"],"names":[],"mappings":";;;AAEA,MAAa,aAAa;CASzB;AATD,sCASC;AAED,MAAa,2BAA2B;IAAxC;QACW,SAAI,GAAW,WAAW,CAAC;IAEtC,CAAC;CAAA;AAHD,kEAGC;AAGD,MAAM,CAAC,OAAO,GAAG,IAAI,aAAa,EAAE,CAAC"}

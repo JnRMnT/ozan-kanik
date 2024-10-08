@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.BioSummaryInfoContent = exports.PersonalContactInformation = exports.BioSummaryInfo = void 0;
 class BioSummaryInfo {
 }
 exports.BioSummaryInfo = BioSummaryInfo;
